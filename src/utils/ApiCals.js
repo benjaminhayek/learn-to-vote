@@ -7,7 +7,8 @@ export const initialFetch = async (state) => {
         'X-API-Key':PROPUBLICA_API_KEY
       }
     });
-    return await response.json();
+    const result = await response.json();
+    return result.results
   };
 
   export const getState = async () => {

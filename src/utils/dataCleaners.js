@@ -11,6 +11,5 @@ export const congressData = async (data) => {
         });
         return membersData;
       }, []);
-      console.log(eachMember)
       return eachMember;
 }

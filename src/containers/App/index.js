@@ -1,22 +1,14 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Route, withRouter } from 'react-router-dom';
 import { initialFetch, getState } from '../../utils/ApiCals';
-import { congressData } from '../../utils/dataCleaners'
+import { fetchCongress, contentStatus } from '../../actions'
 import './App.css';
 
 class App extends Component {
-  constructor() {
-    super()
-    this.state = {
-      data: []
-    }
-  }
 
   async componentDidMount() {
-    const shit = await initialFetch()
-    const poop = await getState()
-    const schmoop = await congressData()
-    console.log(schmoop)
-    this.setState({data: shit})
+    this.props.fetchCongress()
   }
 
   render() {
@@ -28,4 +20,14 @@ class App extends Component {
   }
 }
 
-export default App;
+export const mapStateToProps = (state) => ({
+  congressmen: state.congressmen,
+  loading: state.loading
+});
+
+export const mapDispatchToProps = (dispatch) => ({
+  fetchCongress: () => dispatch(fetchCongress()),
+  contentStatus: (loading) => dispatch(contentStatus(loading))
+});
+
+export default withRouter(connect (mapStateToProps, mapDispatchToProps)(App));
