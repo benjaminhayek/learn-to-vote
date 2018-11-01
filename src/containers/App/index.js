@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { Route, withRouter } from 'react-router-dom';
 import { initialCongressFetch, getState } from '../../utils/ApiCals';
 import { contentStatus } from '../../actions'
-import { fetchCongress, fetchSenators } from '../../actions/Thunks'
+import { fetchCongress, fetchSenators } from '../../actions/Thunks';
+import MemberContainer from '../../components/MemberContainer';
 import './App.css';
 
 class App extends Component {
@@ -14,9 +15,10 @@ class App extends Component {
   }
 
   render() {
+    const { senators, congressmen } = this.props;
     return (
       <div className="App">
-        
+        <MemberContainer congressmen={congressmen} senators={senators}/>
       </div>
     );
   }
