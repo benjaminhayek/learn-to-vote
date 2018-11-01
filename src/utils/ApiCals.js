@@ -1,7 +1,21 @@
 import { key } from './ApiKey';
 
-export const initialFetch = async (state) => {
-    const url = `https://api.propublica.org/congress/${state}/members/house/co/current.json`;
+export const initialCongressFetch = async () => {
+    const state = await getState()
+    const url = `https://api.propublica.org/congress/v1/members/house/${state}/current.json`;
+  
+    const response = await fetch(url, {
+      headers: {
+        'X-API-Key':key
+      }
+    });
+    const result = await response.json();
+    return result.results
+  };
+
+  export const initialSenateFetch = async () => {
+    const state = await getState()
+    const url = `https://api.propublica.org/congress/v1/members/senate/${state}/current.json`;
   
     const response = await fetch(url, {
       headers: {
