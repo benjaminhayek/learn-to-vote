@@ -10,7 +10,7 @@ export const initialCongressFetch = async () => {
       }
     });
     const result = await response.json();
-    return result.results
+    return result
   };
 
   export const initialSenateFetch = async () => {
@@ -23,7 +23,7 @@ export const initialCongressFetch = async () => {
       }
     });
     const result = await response.json();
-    return result.results
+    return result
   };
 
   export const getState = async () => {

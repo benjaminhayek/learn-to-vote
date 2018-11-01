@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route, withRouter } from 'react-router-dom';
-import { initialCongressFetch, getState } from '../../utils/ApiCals';
+import { initialCongressFetch, initialSenateFetch } from '../../utils/ApiCals';
+import { congressdata, senateData } from '../../utils/dataCleaners'
 import { contentStatus } from '../../actions'
 import { fetchCongress, fetchSenators } from '../../actions/Thunks';
 import MemberContainer from '../../components/MemberContainer';
