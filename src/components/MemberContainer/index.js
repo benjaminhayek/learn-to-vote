@@ -1,5 +1,6 @@
 import React from 'react';
-import Card from '../MemberCard'
+import Card from '../MemberCard';
+import './MemberContainer.css';
 
 const MemberContainer = ({congressmen, senators}) => {
     let uuidv4 = require("uuid/v4");
@@ -13,7 +14,7 @@ const MemberContainer = ({congressmen, senators}) => {
       });
     return(
       <div>
-          <h1>{displayMembers}</h1>
+          <h1 className='card-container'>{displayMembers}</h1>
       </div>
     )
 }

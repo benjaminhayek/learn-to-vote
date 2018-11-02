@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './MemberCard.css'
 
 export class MemberCard extends Component {
     constructor() {
@@ -8,7 +9,7 @@ export class MemberCard extends Component {
     render() {
         const { congressmen } = this.props
         return(
-            <div classNamea='congress-card'>
+            <div className={congressmen.party === 'D' ? 'dem' : 'rep'}>
                 <h1 className='name'>{congressmen.name}</h1>
                 <h2 className='title'>{congressmen.title}</h2>
                 <h2 className='party'>{congressmen.party}</h2>
