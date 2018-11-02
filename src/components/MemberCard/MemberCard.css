@@ -2,10 +2,24 @@
     border: 3px solid blue;
     margin: 5px;
     padding: 5px;
+    color: blue;
+    width: 300px;
+    text-align: center
 }
 
 .rep {
     border: 3px solid red;
     margin: 5px;
     padding: 5px;
+    color: red;
+    width: 300px;
+    text-align: center
+}
+
+.name {
+    font-size: 1em;
+}
+
+.title, .party {
+    font-size: .75em;
 }
