@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from '../MemberCard'
 
-const MemberContainer = ({senators, congressmen}) => {
+const MemberContainer = ({congressmen, senators}) => {
     let uuidv4 = require("uuid/v4");
     const displayMembers = congressmen.map((congressmen) => {
         return (
@@ -11,19 +11,10 @@ const MemberContainer = ({senators, congressmen}) => {
           />
         );
       });
-      const displaySenators = senators.map((senator) => {
-        return (
-          <Card
-            senator={senator}
-            key={uuidv4()}
-          />
-        );
-      });
     return(
-        <div>
-            <h1>{displayMembers}</h1>
-            <h1>{displaySenators}</h1>
-        </div>
+      <div>
+          <h1>{displayMembers}</h1>
+      </div>
     )
 }
 

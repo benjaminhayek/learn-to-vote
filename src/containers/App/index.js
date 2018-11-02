@@ -6,6 +6,7 @@ import { congressdata, senateData } from '../../utils/dataCleaners'
 import { contentStatus } from '../../actions'
 import { fetchCongress, fetchSenators } from '../../actions/Thunks';
 import MemberContainer from '../../components/MemberContainer';
+import SenateContainer from '../../components/SenateContainer';
 import './App.css';
 
 class App extends Component {
@@ -19,7 +20,8 @@ class App extends Component {
     const { senators, congressmen } = this.props;
     return (
       <div className="App">
-        <MemberContainer congressmen={congressmen} senators={senators}/>
+        <MemberContainer congressmen={congressmen} />
+        <SenateContainer senators={senators} />
       </div>
     );
   }

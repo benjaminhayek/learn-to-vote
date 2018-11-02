@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 
-export class MemberCard extends Component {
+export class SenateCard extends Component {
     constructor() {
         super()
     }
 
     render() {
-        const { congressmen } = this.props
+        const { senator } =this.props       
         return(
             <div>
-                <h1>{congressmen.name}</h1>
+                <h1>{senator.name}</h1>
             </div>
         )
     }
 }
 
-export default MemberCard
+export default SenateCard
