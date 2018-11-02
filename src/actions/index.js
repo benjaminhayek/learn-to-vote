@@ -17,3 +17,8 @@
     type: 'GET_EDUCATION',
     bills
   })
+
+  export const toggleSelected = (selected) => ({
+    type: 'TOGGLE_SELECTED',
+    selected
+  })
