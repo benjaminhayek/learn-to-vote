@@ -13,6 +13,7 @@ export class SenateCard extends Component {
                 <h1 className='name'>{senator.name}</h1>
                 <h2 className='title'>{senator.title}</h2>
                 <h2 className='party'>{senator.party}</h2>
+                <h2 className='election-date'>Next Election: {senator.nextElection}</h2>
             </div>
         )
     }

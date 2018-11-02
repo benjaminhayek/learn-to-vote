@@ -34,6 +34,29 @@ export const initialCongressFetch = async () => {
     return state
   }
 
+  export const getEducationBills = async () => {
+    const url = "https://api.propublica.org/congress/v1/bills/search.json?query=education"
+    const response = await fetch(url, {
+      headers: {
+        'X-API-Key':key
+      }
+    });
+    const result = await response.json();
+    return result.results[0].bills
+  }
+
+  export const comparePositions = async (id1, id2) => {
+    const url = `https://api.propublica.org/congress/v1/members/${id1}/votes/${id2}/congress/house.json`
+
+    const response = await fetch(url, {
+      headers: {
+        'X-API-Key':key
+      }
+    });
+    const result = await response.json();
+    return result
+  }
+
 
 // "https://api.propublica.org/congress/v1/members/P000593.json"
 

@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route, withRouter } from 'react-router-dom';
 import Header from '../../components/Header';
+import { initialCongressFetch, comparePositions } from '../../utils/ApiCals';
 import { contentStatus } from '../../actions'
-import { fetchCongress, fetchSenators } from '../../actions/Thunks';
+import { fetchCongress, fetchSenators, getBills } from '../../actions/Thunks';
 import MemberContainer from '../../components/MemberContainer';
 import SenateContainer from '../../components/SenateContainer';
 import './App.css';
@@ -13,6 +14,8 @@ class App extends Component {
   async componentDidMount() {
     this.props.fetchCongress()
     this.props.fetchSenators()
+    const thing = this.props.getBills()
+    console.log(thing)
   }
 
   render() {
@@ -34,6 +37,7 @@ export const mapStateToProps = (state) => ({
 });
 
 export const mapDispatchToProps = (dispatch) => ({
+  getBills: () => dispatch(getBills()),
   fetchCongress: () => dispatch(fetchCongress()),
   fetchSenators: () => dispatch(fetchSenators()),
   contentStatus: (loading) => dispatch(contentStatus(loading))

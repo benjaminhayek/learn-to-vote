@@ -13,6 +13,7 @@ export class MemberCard extends Component {
                 <h1 className='name'>{congressmen.name}</h1>
                 <h2 className='title'>{congressmen.title}</h2>
                 <h2 className='party'>{congressmen.party}</h2>
+                <h2 className='election-date'>Next Election: {congressmen.nextElection}</h2>                
             </div>
         )
     }

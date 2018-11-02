@@ -12,3 +12,8 @@
     type: "ADD_SENATORS",
     senator
   });
+
+  export const getEducation = (bills) => ({
+    type: 'GET_EDUCATION',
+    bills
+  })

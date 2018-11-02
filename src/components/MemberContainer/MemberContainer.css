@@ -3,3 +3,7 @@
     flex-wrap: wrap;
     justify-content: center;
   }
+
+  .container-title {
+    color: white;
+  }

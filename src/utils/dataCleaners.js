@@ -6,7 +6,9 @@ export const congressData = async (data) => {
         membersData.push({
             name: member.name,
             party: member.party,
-            title: member.role
+            title: member.role,
+            id: member.id,
+            nextElection: member.next_election,
         });
         return membersData;
       }, []);
@@ -19,7 +21,9 @@ export const senateData = async (data) => {
         senateData.push({
             name: senator.name,
             party: senator.party,
-            title: senator.role
+            title: senator.role,
+            id: senator.id,
+            nextElection: senator.next_election,
         });
         return senateData;
       }, []);
