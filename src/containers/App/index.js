@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route, withRouter } from 'react-router-dom';
 import Header from '../../components/Header';
-import { initialCongressFetch, comparePositions } from '../../utils/ApiCals';
 import { contentStatus } from '../../actions'
 import { fetchCongress, fetchSenators, getBills } from '../../actions/Thunks';
 import MemberContainer from '../../components/MemberContainer';
@@ -18,12 +17,12 @@ class App extends Component {
   }
 
   render() {
-    const { senators, congressmen } = this.props;
+    const { senators, congressmen, bills } = this.props;
     return (
       <div className="App">
         <Header />
         <MemberContainer congressmen={congressmen} />
-        <SenateContainer senators={senators} />
+        <SenateContainer senators={senators} bills={bills}/>
       </div>
     );
   }
