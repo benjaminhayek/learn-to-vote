@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import Card from '../MemberCard';
 import './MemberContainer.css';
-import { comparePositions } from '../../utils/ApiCals'; 
 import { educationBills } from '../../utils/dataCleaners';
 
 class MemberContainer extends Component {
     constructor() {
       super()
     }
+    handleSubmit = async (event) => {
+    const { congressmen } = this.props
+    const selectedCount = congressmen.filter(member => member.selected)
+    const poop = await educationBills(selectedCount[0].id, selectedCount[1].id)
+    console.log(poop)
+  }
     render() {
     const { congressmen } = this.props
     let uuidv4 = require("uuid/v4");
@@ -26,18 +31,15 @@ class MemberContainer extends Component {
           />
         );
       });
-
-    if(selectedCount.length > 1){
-     const select = educationBills(selectedCount[0].id, selectedCount[1].id)
-     console.log(select)
-    }
+    const showButton = selectedCount.length >= 1 ? true : false
     return(
       <div>
         {
-          selectedCount &&
+          showButton &&
           <div>
             <h1 className='container-title'>{selectedCount ? 'You have Selected' : ''}</h1>
             <h1 className='card-container'>{displaySelected}</h1>
+            <button onClick={this.handleSubmit}>Compare Congressmen</button>
           </div>
         }
         <div>

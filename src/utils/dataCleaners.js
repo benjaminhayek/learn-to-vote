@@ -34,15 +34,18 @@ export const senateData = async (data) => {
 
 export const educationBills = async (id1, id2) => {
     const bills = await comparePositions(id1, id2)
-    const billInfo = bills.reduce((billData, bill) => {
+    const unresolvedPromises = await bills.filter(async(bill) => {
         if(bill.committees.includes('Education')){
-        billData.push({
-            sponsor: getSponsors(bill.api_uri),
+        return {
+            sponsor: await getSponsors(bill.api_uri),
             committees: bill.committees, 
             title: bill.title,
-        })
-    }
-        return billData;
-    }, [])
-    return billInfo
+            }
+        }
+    })
+    const result = await  Promise.all(unresolvedPromises)
+    const cleanedResults = result.filter(bill => 
+        (bill.committees.includes('Education'))
+      )
+    return cleanedResults
 }
