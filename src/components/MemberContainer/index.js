@@ -1,17 +1,26 @@
 import React, { Component } from 'react';
 import Card from '../MemberCard';
+import MemberBillsCard from '../MemberBillsCard';
 import './MemberContainer.css';
 import { educationBills } from '../../utils/dataCleaners';
 
 class MemberContainer extends Component {
     constructor() {
       super()
+      this.state = {
+        bills: []
+      }
     }
     handleSubmit = async (event) => {
     const { congressmen } = this.props
     const selectedCount = congressmen.filter(member => member.selected)
-    const poop = await educationBills(selectedCount[0].id, selectedCount[1].id)
-    console.log(poop)
+    const memberBills = await educationBills(selectedCount[0].id, selectedCount[1].id)
+    const displayMembersBill = memberBills.map(bills => ({
+      title: bills.title,
+      committee: bills.committees,
+      url: bills.url
+    }))
+    this.setState({bills: displayMembersBill})
   }
     render() {
     const { congressmen } = this.props
@@ -23,6 +32,14 @@ class MemberContainer extends Component {
         key={uuidv4()}
       />
     ));
+    const displayBills = this.state.bills.map(bill => {
+      return (
+        <MemberBillsCard 
+          bills={bill}
+          key={uuidv4()}
+        />
+      )
+    })
     const displayMembers = congressmen.map((congressmen) => {
         return (
           <Card
@@ -40,6 +57,7 @@ class MemberContainer extends Component {
             <h1 className='container-title'>{selectedCount ? 'You have Selected' : ''}</h1>
             <h1 className='card-container'>{displaySelected}</h1>
             <button onClick={this.handleSubmit}>Compare Congressmen</button>
+            <h1>{displayBills}</h1>
           </div>
         }
         <div>

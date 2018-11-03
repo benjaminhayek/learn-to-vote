@@ -21,7 +21,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <MemberContainer congressmen={congressmen} />
+        <MemberContainer congressmen={congressmen} bills={bills}/>
         <SenateContainer senators={senators} bills={bills}/>
       </div>
     );
