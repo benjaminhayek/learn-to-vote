@@ -8,7 +8,7 @@ import MemberContainer from '../../components/MemberContainer';
 import SenateContainer from '../../components/SenateContainer';
 import './App.css';
 
-class App extends Component {
+export class App extends Component {
 
   async componentDidMount() {
     this.props.fetchCongress()

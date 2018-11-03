@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Card from '../SenateCard';
+import Card from '../../containers/SenateCard';
 import { senateEducationBills } from '../../utils/dataCleaners';
 import SenateBillsCard from '../SenateBillsCard';
 import './SenateContainer.css';

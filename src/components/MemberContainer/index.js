@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Card from '../MemberCard';
+import Card from '../../containers/MemberCard';
 import MemberBillsCard from '../MemberBillsCard';
 import './MemberContainer.css';
 import { educationBills } from '../../utils/dataCleaners';
