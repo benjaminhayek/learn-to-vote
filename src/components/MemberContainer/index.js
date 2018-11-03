@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Card from '../MemberCard';
 import './MemberContainer.css';
+import { comparePositions } from '../../utils/ApiCals'; 
+import { educationBills } from '../../utils/dataCleaners';
 
-const MemberContainer = ({congressmen}) => {
+class MemberContainer extends Component {
+    constructor() {
+      super()
+    }
+    render() {
+    const { congressmen } = this.props
     let uuidv4 = require("uuid/v4");
     const selectedCount = congressmen.filter(member => member.selected)
     const displaySelected = selectedCount.map(congressmen => (
@@ -19,6 +26,11 @@ const MemberContainer = ({congressmen}) => {
           />
         );
       });
+
+    if(selectedCount.length > 1){
+     const select = educationBills(selectedCount[0].id, selectedCount[1].id)
+     console.log(select)
+    }
     return(
       <div>
         {
@@ -34,6 +46,7 @@ const MemberContainer = ({congressmen}) => {
         </div>
       </div>
     )
+  }
 }
 
 export default MemberContainer;

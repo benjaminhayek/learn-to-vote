@@ -14,8 +14,7 @@ class App extends Component {
   async componentDidMount() {
     this.props.fetchCongress()
     this.props.fetchSenators()
-    const thing = this.props.getBills()
-    console.log(thing)
+    this.props.getBills()
   }
 
   render() {
