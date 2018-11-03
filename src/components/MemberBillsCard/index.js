@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './SenateBillsCard.css';
+import './MemberBillsCard.css';
 
 export class MemberBillsCard extends Component {
     constructor() {
