@@ -9,6 +9,7 @@ export const congressData = async (data) => {
             title: member.role,
             id: member.id,
             nextElection: member.next_election,
+            selected: false,
         });
         return membersData;
       }, []);
@@ -24,6 +25,7 @@ export const senateData = async (data) => {
             title: senator.role,
             id: senator.id,
             nextElection: senator.next_election,
+            selected: false,
         });
         return senateData;
       }, []);

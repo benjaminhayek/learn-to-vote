@@ -18,7 +18,7 @@
     bills
   })
 
-  export const toggleSelected = (selected) => ({
+  export const toggleSelected = (id) => ({
     type: 'TOGGLE_SELECTED',
-    selected
+    id
   })
