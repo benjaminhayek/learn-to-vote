@@ -4,6 +4,13 @@ import './MemberContainer.css';
 
 const MemberContainer = ({congressmen}) => {
     let uuidv4 = require("uuid/v4");
+    const selectedCount = congressmen.filter(member => member.selected)
+    const displaySelected = selectedCount.map(congressmen => (
+      <Card 
+        congressmen={congressmen}
+        key={uuidv4()}
+      />
+    ));
     const displayMembers = congressmen.map((congressmen) => {
         return (
           <Card
@@ -14,8 +21,17 @@ const MemberContainer = ({congressmen}) => {
       });
     return(
       <div>
-          <h1 class='container-title'>Your Congressmen</h1>
-          <h1 className='card-container'>{displayMembers}</h1>
+        {
+          selectedCount &&
+          <div>
+            <h1 className='container-title'>{selectedCount ? 'You have Selected' : ''}</h1>
+            <h1 className='card-container'>{displaySelected}</h1>
+          </div>
+        }
+        <div>
+            <h1 class='container-title'>Your Congressmen</h1>
+            <h1 className='card-container'>{displayMembers}</h1>
+        </div>
       </div>
     )
 }

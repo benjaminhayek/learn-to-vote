@@ -19,7 +19,6 @@ const SenateContainer = ({senators}) => {
           />
         );
       });
-      console.log(displaySelected)
     return(
       <div>
         {
