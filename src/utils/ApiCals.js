@@ -53,7 +53,18 @@ export const initialCongressFetch = async () => {
       }
     });
     const result = await response.json();
+    // console.log(result.results[0].bills)
     return result.results[0].bills
+  }
+
+  export const getSponsors = async (url) => {
+    const response = await fetch(url, {
+      headers: {
+        'X-API-Key':key
+      }
+    });
+    const result = await response.json();
+    return result.results[0].congressdotgov_url
   }
 
 

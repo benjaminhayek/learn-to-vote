@@ -1,4 +1,4 @@
-import { initialCongressFetch, initialSenateFetch, comparePositions } from './ApiCals';
+import { initialCongressFetch, initialSenateFetch, comparePositions, getSponsors } from './ApiCals';
 
 export const congressData = async (data) => {
     const congressmen = await initialCongressFetch()
@@ -37,13 +37,12 @@ export const educationBills = async (id1, id2) => {
     const billInfo = bills.reduce((billData, bill) => {
         if(bill.committees.includes('Education')){
         billData.push({
-            url: bill.api_url,
+            sponsor: getSponsors(bill.api_uri),
             committees: bill.committees, 
             title: bill.title,
         })
     }
         return billData;
     }, [])
-    console.log(billInfo)
     return billInfo
 }
