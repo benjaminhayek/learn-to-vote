@@ -46,7 +46,7 @@ export const initialCongressFetch = async () => {
   }
 
   export const comparePositions = async (id1, id2) => {
-    const url = `https://api.propublica.org/congress/v1/members/${id1}/bills/${id2}/114/house.json`
+    const url = `https://api.propublica.org/congress/v1/members/${id1}/bills/${id2}/115/house.json`
     const response = await fetch(url, {
       headers: {
         'X-API-Key':key
