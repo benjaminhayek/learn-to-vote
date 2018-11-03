@@ -53,7 +53,17 @@ export const initialCongressFetch = async () => {
       }
     });
     const result = await response.json();
-    // console.log(result.results[0].bills)
+    return result.results[0].bills
+  }
+
+  export const compareSenators = async (id1, id2) => {
+    const url = `https://api.propublica.org/congress/v1/members/${id1}/bills/${id2}/115/senate.json`
+    const response = await fetch(url, {
+      headers: {
+        'X-API-Key':key
+      }
+    });
+    const result = await response.json();
     return result.results[0].bills
   }
 

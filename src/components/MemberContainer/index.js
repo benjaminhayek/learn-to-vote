@@ -43,7 +43,7 @@ class MemberContainer extends Component {
           </div>
         }
         <div>
-            <h1 class='container-title'>Your Congressmen</h1>
+            <h1 className='container-title'>Your Congressmen</h1>
             <h1 className='card-container'>{displayMembers}</h1>
         </div>
       </div>
