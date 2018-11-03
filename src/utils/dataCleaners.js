@@ -34,14 +34,13 @@ export const senateData = async (data) => {
 
 export const educationBills = async (id1, id2) => {
     const bills = await comparePositions(id1, id2)
-    const unresolvedPromises = await bills.filter(async(bill) => {
-        if(bill.committees.includes('Education')){
+    const unresolvedPromises = await bills.map(async(bill) => {
+        const website = await getSponsors(bill.api_uri)
         return {
-            sponsor: await getSponsors(bill.api_uri),
+            url: website,
             committees: bill.committees, 
             title: bill.title,
             }
-        }
     })
     const result = await  Promise.all(unresolvedPromises)
     const cleanedResults = result.filter(bill => 
@@ -52,14 +51,13 @@ export const educationBills = async (id1, id2) => {
 
 export const senateEducationBills = async (id1, id2) => {
     const bills = await compareSenators(id1, id2)
-    const unresolvedPromises = await bills.filter(async(bill) => {
-        if(bill.committees.includes('Education')){
+    const unresolvedPromises = await bills.map(async(bill) => {
+        const website = await getSponsors(bill.api_uri)
         return {
-            sponsor: await getSponsors(bill.api_uri),
+            url: website,
             committees: bill.committees, 
             title: bill.title,
             }
-        }
     })
     const result = await  Promise.all(unresolvedPromises)
     const cleanedResults = result.filter(bill => 

@@ -12,7 +12,7 @@ export class SenateBillsCard extends Component {
             <div className='bills-container'>
                 <h1 className='committee'>Committee: {bills.committee}</h1>
                 <h2 className='bill-title'>Title: {bills.title}</h2>
-                <h2 className='url'>Click here for more info: {bills.url}</h2>
+                <a className='url' href={bills.url}>Click here for more info</a>
             </div>
         )
     }

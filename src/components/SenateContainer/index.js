@@ -18,7 +18,7 @@ class SenateContainer extends Component {
     const displaySenateBill = senateBills.map(bills => ({
       title: bills.title,
       committee: bills.committees,
-      url: bills.api_uri
+      url: bills.url
     }))
     this.setState({bills: displaySenateBill})
   }
