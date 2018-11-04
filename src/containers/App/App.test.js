@@ -87,3 +87,19 @@ describe('mapStateToProps', () => {
     expect(result).toEqual(expected);
   });
 })
+
+describe('mapDispatchToProps', () => {
+  it('should call dispatch when fetchCongress is invoked', () => {
+    const mockDispatch = jest.fn();
+    const mappedProps = mapDispatchToProps(mockDispatch);
+    mappedProps.fetchCongress({name: 'Political Guy'});
+    expect(mockDispatch).toHaveBeenCalled();
+  });
+
+  it('should call dispatch when fetchSenators is invoked', () => {
+    const mockDispatch = jest.fn();
+    const mappedProps = mapDispatchToProps(mockDispatch);
+    mappedProps.fetchSenators({name: 'Political Guy'});
+    expect(mockDispatch).toHaveBeenCalled();
+  });
+})
