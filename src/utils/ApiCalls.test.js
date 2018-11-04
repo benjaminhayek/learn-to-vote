@@ -1,4 +1,4 @@
-import { initialCongressFetch, initialSenateFetch, getState, getEducationBills } from './ApiCals';
+import { initialCongressFetch, initialSenateFetch, getState, getEducationBills, comparePositions, compareSenators, getSponsors } from './ApiCals';
 import { key } from './ApiKey'
 
 describe('API', () => {
@@ -69,4 +69,67 @@ describe('API', () => {
         getEducationBills();
         expect(window.fetch).toHaveBeenCalledWith(...expected);
       });
+
+      it('calls fetch with the correct params', () => {
+        const url = "https://api.propublica.org/congress/v1/members/undefined/bills/undefined/115/house.json"
+        window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+            status: 200,
+            json: () => Promise.resolve({
+                bills: []
+            })
+          }))
+    
+          const expected = [ 
+            url, {
+              headers: {
+                'X-API-Key': key
+              }
+            }
+          ]
+
+        comparePositions();
+        expect(window.fetch).toHaveBeenCalledWith(...expected);
+      });
+
+      it('calls fetch with the correct params', () => {
+        const url = "https://api.propublica.org/congress/v1/members/undefined/bills/undefined/115/senate.json"
+        window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+            status: 200,
+            json: () => Promise.resolve({
+                bills: []
+            })
+          }))
+    
+          const expected = [ 
+            url, {
+              headers: {
+                'X-API-Key': key
+              }
+            }
+          ]
+
+        compareSenators();
+        expect(window.fetch).toHaveBeenCalledWith(...expected);
+      });
+
+    //   it('calls fetch with the correct params', async () => {
+    //     const url = "https://api.propublica.org/congress/v1/members/undefined/bills/undefined/115/senate.json"
+    //     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+    //         status: 200,
+    //         json: () => Promise.resolve({
+    //             bills: []
+    //         })
+    //       }))
+    
+    //       const expected = [ 
+    //         url, {
+    //           headers: {
+    //             'X-API-Key': key
+    //           }
+    //         }
+    //       ]
+
+    //     getSponsors();
+    //     expect(window.fetch).toHaveBeenCalledWith(...expected);
+    //   });
 })
