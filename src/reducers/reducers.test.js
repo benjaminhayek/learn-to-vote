@@ -37,9 +37,9 @@ describe('congressmenReducer', () => {
       })
 
       it('should toggle selected when toggle selected is dispatched', () => {
-        const initialState = [];
-        const expected = [];
-        const result = congressmenReducer(initialState, actions.toggleSelected({id:1}))
+        const initialState = [false];
+        const expected = [false];
+        const result = congressmenReducer(initialState, actions.toggleSelected({id:1, selected: false}))
         expect(result).toEqual(expected)
       })
 })
@@ -60,9 +60,9 @@ describe('senatorReducer', () => {
       })
 
       it('should toggle selected when toggle selected is dispatched', () => {
-        const initialState = [];
-        const expected = [];
-        const result = senatorReducer(initialState, actions.toggleSelected({id:1}))
+        const initialState = [false];
+        const expected = [false];
+        const result = senatorReducer(initialState, actions.toggleSelected({id:1, selected: true}))
         expect(result).toEqual(expected)
       })
 })

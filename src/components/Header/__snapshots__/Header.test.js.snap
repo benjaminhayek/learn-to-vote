@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HEADER should match the snapshot 1`] = `
+<div
+  className="header"
+>
+  <h1
+    className="header-title"
+  >
+    Learn to Vote
+  </h1>
+</div>
+`;
