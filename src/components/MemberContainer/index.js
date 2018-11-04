@@ -3,6 +3,7 @@ import Card from '../../containers/MemberCard';
 import MemberBillsCard from '../MemberBillsCard';
 import './MemberContainer.css';
 import { educationBills } from '../../utils/dataCleaners';
+import PropTypes from 'prop-types';
 
 export class MemberContainer extends Component {
     constructor() {
@@ -69,5 +70,11 @@ export class MemberContainer extends Component {
     )
   }
 }
+
+MemberContainer.propTypes = {
+  congressmen: PropTypes.array,
+  bills: PropTypes.array
+}
+
 
 export default MemberContainer;

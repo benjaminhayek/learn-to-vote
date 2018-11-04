@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { toggleSelected } from '../../actions';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import './SenateCard.css'
 
 export class SenateCard extends Component {
@@ -32,5 +33,9 @@ export const mapStateToProps = (state) => ({
 export const mapDispatchToProps = (dispatch) => ({
     toggleSelected: (id) => dispatch(toggleSelected(id))
 })
+
+SenateCard.propTypes = {
+    senator: PropTypes.array
+  }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SenateCard)

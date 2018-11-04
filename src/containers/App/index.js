@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route, withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import Header from '../../components/Header';
 import { contentStatus } from '../../actions'
 import { fetchCongress, fetchSenators, getBills } from '../../actions/Thunks';
@@ -40,5 +41,11 @@ export const mapDispatchToProps = (dispatch) => ({
   fetchSenators: () => dispatch(fetchSenators()),
   contentStatus: (loading) => dispatch(contentStatus(loading))
 });
+
+App.propTypes = {
+  senators: PropTypes.array,
+  congressmen: PropTypes.array,
+  bills: PropTypes.array
+}
 
 export default withRouter(connect (mapStateToProps, mapDispatchToProps)(App));

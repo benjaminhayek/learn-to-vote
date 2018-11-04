@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './SenateBillsCard.css';
 
 export class SenateBillsCard extends Component {
@@ -17,5 +18,9 @@ export class SenateBillsCard extends Component {
         )
     }
 }
+
+SenateBillsCard.propTypes = {
+    bills: PropTypes.object
+  }
 
 export default SenateBillsCard

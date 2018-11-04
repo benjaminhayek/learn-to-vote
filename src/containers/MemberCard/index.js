@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { toggleSelected } from '../../actions'
+import { toggleSelected } from '../../actions';
+import PropTypes from 'prop-types';
 import './MemberCard.css'
 
 export class MemberCard extends Component {
@@ -32,5 +33,9 @@ export const mapStateToProps = (state) => ({
 export const mapDispatchToProps = (dispatch) => ({
     toggleSelected: (id) => dispatch(toggleSelected(id))
 })
+
+MemberCard.propTypes = {
+    congressmen: PropTypes.array
+  }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MemberCard)

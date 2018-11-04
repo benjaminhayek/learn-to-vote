@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Card from '../../containers/SenateCard';
 import { senateEducationBills } from '../../utils/dataCleaners';
 import SenateBillsCard from '../SenateBillsCard';
+import PropTypes from 'prop-types';
 import './SenateContainer.css';
 
 export class SenateContainer extends Component {
@@ -68,6 +69,11 @@ export class SenateContainer extends Component {
       </div>
     )
   }
+}
+
+SenateContainer.propTypes = {
+  bills: PropTypes.object,
+  senators: PropTypes.array
 }
 
 export default SenateContainer;
