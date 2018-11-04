@@ -43,3 +43,26 @@ describe('congressmenReducer', () => {
         expect(result).toEqual(expected)
       })
 })
+
+describe('senatorReducer', () => {
+    it('should return the initial state', () => {
+        const expected = [];
+        const result = senatorReducer(undefined, {});
+        expect(result).toEqual(expected);
+      });
+    
+      it('should update state with bills when addCongressmen is dispatched', () => {
+        const initialState = [];
+        const senator = [{name: 'Bill', id: 3, party: 'D', title: 'Senator', nextElection: '2020', selected: false}, {name: 'Sue', id: 4, party: 'R', title: 'Senator', nextElection: '2020', selected: false}];
+        const expected = [...senator];
+        const result = senatorReducer(initialState, actions.addSenators(senator));
+        expect(result).toEqual(expected);
+      })
+
+      it('should toggle selected when toggle selected is dispatched', () => {
+        const initialState = [];
+        const expected = [];
+        const result = senatorReducer(initialState, actions.toggleSelected({id:1}))
+        expect(result).toEqual(expected)
+      })
+})
