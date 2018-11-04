@@ -112,24 +112,25 @@ describe('API', () => {
         expect(window.fetch).toHaveBeenCalledWith(...expected);
       });
 
-    //   it('calls fetch with the correct params', async () => {
-    //     const url = "https://api.propublica.org/congress/v1/members/undefined/bills/undefined/115/senate.json"
-    //     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-    //         status: 200,
-    //         json: () => Promise.resolve({
-    //             bills: []
-    //         })
-    //       }))
+      it('calls fetch with the correct params', async () => {
+        const parameter = [{congressdotgov_url: "https://www.congress.gov/bill/115th-congress/house-bill/1847"}]
+        const url = "https://api.propublica.org/congress/v1/115/bills/hres30.json"
+        window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+          status: 200,
+          json: () => Promise.resolve({
+              results: parameter
+          })
+        }))
     
-    //       const expected = [ 
-    //         url, {
-    //           headers: {
-    //             'X-API-Key': key
-    //           }
-    //         }
-    //       ]
+          const expected = [ 
+            url, {
+              headers: {
+                'X-API-Key': key
+              }
+            }
+          ]
 
-    //     getSponsors();
-    //     expect(window.fetch).toHaveBeenCalledWith(...expected);
-    //   });
+        getSponsors(url);
+        expect(window.fetch).toHaveBeenCalledWith(...expected);
+      });
 })
