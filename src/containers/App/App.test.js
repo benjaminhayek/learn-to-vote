@@ -74,3 +74,16 @@ describe('APP', () => {
     expect(mockFn).toHaveBeenCalled();
   });
 })
+
+describe('mapStateToProps', () => {
+  it('should have access to senators, congressmen and loading', () => {
+    const mockStore = {
+      congressmen: [],
+      senators: [],
+      loading: 'undefined',
+    }
+    const expected = {...mockStore};
+    const result = mapStateToProps(mockStore);
+    expect(result).toEqual(expected);
+  });
+})
