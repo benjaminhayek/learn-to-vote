@@ -4,7 +4,7 @@ import { senateEducationBills } from '../../utils/dataCleaners';
 import SenateBillsCard from '../SenateBillsCard';
 import './SenateContainer.css';
 
-class SenateContainer extends Component {
+export class SenateContainer extends Component {
   constructor() {
     super()
     this.state = {
