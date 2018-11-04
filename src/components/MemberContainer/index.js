@@ -48,7 +48,7 @@ export class MemberContainer extends Component {
           />
         );
       });
-    const showButton = selectedCount.length >= 1 ? true : false
+    const showButton = selectedCount.length >= 1 && selectedCount.length < 3  ? true : false
     return(
       <div>
         {
