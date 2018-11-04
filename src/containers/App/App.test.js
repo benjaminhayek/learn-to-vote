@@ -102,4 +102,11 @@ describe('mapDispatchToProps', () => {
     mappedProps.fetchSenators({name: 'Political Guy'});
     expect(mockDispatch).toHaveBeenCalled();
   });
+
+  it('should call dispatch when contentStatus is invoked', () => {
+    const mockDispatch = jest.fn();
+    const mappedProps = mapDispatchToProps(mockDispatch);
+    mappedProps.contentStatus('loading');
+    expect(mockDispatch).toHaveBeenCalled();
+  });
 })
