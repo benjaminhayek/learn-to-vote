@@ -1,17 +1,19 @@
 import React from 'react';
 import { MemberCard } from './index.js';
 import { mapStateToProps, mapDispatchToProps } from './index.js';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 
 describe('APP', () => {
   let wrapper;
   let mockFetch;
   let mockParty;
   let congressmen;
+  let toggleSelected;
 
   beforeEach(() => {
     mockFetch = jest.fn();
     mockParty = 'D';
+    toggleSelected = jest.fn()
     congressmen = {name: 'name', party: 'D', title: 'title'}
     wrapper = shallow(
       <MemberCard congressmen={congressmen}/>
@@ -21,6 +23,14 @@ describe('APP', () => {
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should call toggleSelect on click', () => {
+    wrapper = mount(<MemberCard congressmen={congressmen} toggleSelected={toggleSelected}/>)
+    const spy = jest.spyOn(wrapper.instance(), 'toggleSelect');
+    wrapper.instance().forceUpdate();
+    wrapper.find('.dem').simulate('click')
+    expect(spy).toHaveBeenCalled()
+  })
 })
 
 describe('mapStateToProps', () => {
