@@ -1,3 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`APP should match the snapshot 1`] = `undefined`;
+exports[`APP should match the snapshot 1`] = `
+<div
+  className="App"
+>
+  <Header />
+  <MemberContainer />
+  <SenateContainer />
+</div>
+`;

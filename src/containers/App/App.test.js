@@ -6,9 +6,11 @@ import { shallow } from 'enzyme';
 describe('APP', () => {
   let wrapper;
   let mockFetch;
+  let mockCongress;
 
   beforeEach(() => {
     mockFetch = jest.fn();
+    mockCongress = [];
     wrapper = shallow(
       <App />
     )
@@ -16,5 +18,41 @@ describe('APP', () => {
 
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should call fetchCongress on componentDidMount', async () =>{
+    let mockCongress= {congress:[]};
+    let mockFn = jest.fn().mockImplementation(() => (mockCongress));
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        json: () => Promise.resolve(mockFn)
+      });
+    });
+    wrapper = shallow(
+      <App
+        fetchCongress={mockFn}
+        fetchSenators={mockFn}
+        getBills={mockFn}
+      />);
+    await wrapper.instance().componentDidMount();
+    expect(mockFn).toHaveBeenCalled();
+  });
+
+  it('should call fetchSenators on componentDidMount', async () =>{
+    let mockSenators= {senators:[]};
+    let mockFn = jest.fn().mockImplementation(() => (mockSenators));
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        json: () => Promise.resolve(mockFn)
+      });
+    });
+    wrapper = shallow(
+      <App
+        fetchCongress={mockFn}
+        fetchSenators={mockFn}
+        getBills={mockFn}
+      />);
+    await wrapper.instance().componentDidMount();
+    expect(mockFn).toHaveBeenCalled();
   });
 })
