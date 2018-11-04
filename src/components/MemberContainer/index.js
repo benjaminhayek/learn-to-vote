@@ -4,7 +4,7 @@ import MemberBillsCard from '../MemberBillsCard';
 import './MemberContainer.css';
 import { educationBills } from '../../utils/dataCleaners';
 
-class MemberContainer extends Component {
+export class MemberContainer extends Component {
     constructor() {
       super()
       this.state = {

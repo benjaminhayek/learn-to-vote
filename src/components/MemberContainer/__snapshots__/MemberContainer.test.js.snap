@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MemberContainer should match the snapshot 1`] = `
+<div>
+  <div>
+    <h1
+      className="container-title"
+    >
+      Your Congressmen
+    </h1>
+    <h1
+      className="card-container"
+    >
+      <Connect(MemberCard)
+        congressmen={
+          Object {
+            "id": 1,
+            "name": "Ted",
+            "nextElection": "2018",
+            "party": "D",
+            "selected": false,
+            "title": "Representative",
+          }
+        }
+        key="96df5d9c-0d65-46b4-a023-e279ec9526fb"
+      />
+      <Connect(MemberCard)
+        congressmen={
+          Object {
+            "id": 2,
+            "name": "Jan",
+            "nextElection": "2018",
+            "party": "R",
+            "selected": false,
+            "title": "Representative",
+          }
+        }
+        key="f4ecb281-0c62-462d-b530-f407fbc46ebe"
+      />
+    </h1>
+  </div>
+</div>
+`;
