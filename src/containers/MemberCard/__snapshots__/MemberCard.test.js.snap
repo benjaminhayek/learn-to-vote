@@ -27,3 +27,31 @@ exports[`APP should match the snapshot 1`] = `
   </h2>
 </div>
 `;
+
+exports[`MemberCard should match the snapshot 1`] = `
+<div
+  className="dem"
+  onClick={[Function]}
+>
+  <h1
+    className="name"
+  >
+    name
+  </h1>
+  <h2
+    className="title"
+  >
+    title
+  </h2>
+  <h2
+    className="party"
+  >
+    D
+  </h2>
+  <h2
+    className="election-date"
+  >
+    Next Election: 
+  </h2>
+</div>
+`;

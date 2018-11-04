@@ -1,22 +1,22 @@
 import React from 'react';
-import { MemberCard } from './index.js';
+import { SenateCard } from './index.js';
 import { mapStateToProps, mapDispatchToProps } from './index.js';
 import { shallow, mount } from 'enzyme';
 
-describe('MemberCard', () => {
+describe('SenateCard', () => {
   let wrapper;
   let mockFetch;
   let mockParty;
-  let congressmen;
+  let senator;
   let toggleSelected;
 
   beforeEach(() => {
     mockFetch = jest.fn();
     mockParty = 'D';
     toggleSelected = jest.fn()
-    congressmen = {name: 'name', party: 'D', title: 'title'}
+    senator = {name: 'name', party: 'D', title: 'title'}
     wrapper = shallow(
-      <MemberCard congressmen={congressmen}/>
+      <SenateCard senator={senator}/>
     )
   })
 
@@ -25,7 +25,7 @@ describe('MemberCard', () => {
   });
 
   it('should call toggleSelect on click', () => {
-    wrapper = mount(<MemberCard congressmen={congressmen} toggleSelected={toggleSelected}/>)
+    wrapper = mount(<SenateCard senator={senator} toggleSelected={toggleSelected}/>)
     const spy = jest.spyOn(wrapper.instance(), 'toggleSelect');
     wrapper.instance().forceUpdate();
     wrapper.find('.dem').simulate('click')
