@@ -2,29 +2,27 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route, withRouter } from 'react-router-dom';
 import Header from '../../components/Header';
-import { initialCongressFetch, comparePositions } from '../../utils/ApiCals';
 import { contentStatus } from '../../actions'
 import { fetchCongress, fetchSenators, getBills } from '../../actions/Thunks';
 import MemberContainer from '../../components/MemberContainer';
 import SenateContainer from '../../components/SenateContainer';
 import './App.css';
 
-class App extends Component {
+export class App extends Component {
 
   async componentDidMount() {
     this.props.fetchCongress()
     this.props.fetchSenators()
-    const thing = this.props.getBills()
-    console.log(thing)
+    this.props.getBills()
   }
 
   render() {
-    const { senators, congressmen } = this.props;
+    const { senators, congressmen, bills } = this.props;
     return (
       <div className="App">
         <Header />
-        <MemberContainer congressmen={congressmen} />
-        <SenateContainer senators={senators} />
+        <MemberContainer congressmen={congressmen} bills={bills}/>
+        <SenateContainer senators={senators} bills={bills}/>
       </div>
     );
   }

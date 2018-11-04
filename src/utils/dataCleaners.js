@@ -1,4 +1,4 @@
-import { initialCongressFetch, initialSenateFetch } from './ApiCals';
+import { initialCongressFetch, initialSenateFetch, comparePositions, getSponsors, compareSenators } from './ApiCals';
 
 export const congressData = async (data) => {
     const congressmen = await initialCongressFetch()
@@ -30,4 +30,38 @@ export const senateData = async (data) => {
         return senateData;
       }, []);
       return eachSenator;
+}
+
+export const educationBills = async (id1, id2) => {
+    const bills = await comparePositions(id1, id2)
+    const unresolvedPromises = await bills.map(async(bill) => {
+        const website = await getSponsors(bill.api_uri)
+        return {
+            url: website,
+            committees: bill.committees, 
+            title: bill.title,
+            }
+    })
+    const result = await  Promise.all(unresolvedPromises)
+    const cleanedResults = result.filter(bill => 
+        (bill.committees.includes('Education'))
+      )
+    return cleanedResults
+}
+
+export const senateEducationBills = async (id1, id2) => {
+    const bills = await compareSenators(id1, id2)
+    const unresolvedPromises = await bills.map(async(bill) => {
+        const website = await getSponsors(bill.api_uri)
+        return {
+            url: website,
+            committees: bill.committees, 
+            title: bill.title,
+            }
+    })
+    const result = await  Promise.all(unresolvedPromises)
+    const cleanedResults = result.filter(bill => 
+        (bill.committees.includes('Education'))
+      )
+    return cleanedResults
 }

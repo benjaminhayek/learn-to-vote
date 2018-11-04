@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SenateContainer should match the snapshot 1`] = `
+<div>
+  <div>
+    <h1
+      className="container-title"
+    >
+      Your Senators
+    </h1>
+    <h1
+      className="card-container"
+    >
+      <Connect(SenateCard)
+        key="fc832f24-8d21-454e-af14-67418e8825a6"
+        senator={
+          Object {
+            "id": 2,
+            "name": "Bob",
+            "nextElection": "2020",
+            "party": "R",
+            "selected": false,
+            "title": "Senator",
+          }
+        }
+      />
+      <Connect(SenateCard)
+        key="09080d00-0bfa-463f-8252-393ea4797f52"
+        senator={
+          Object {
+            "id": 2,
+            "name": "Jan",
+            "nextElection": "2018",
+            "party": "R",
+            "selected": false,
+            "title": "Senator",
+          }
+        }
+      />
+    </h1>
+  </div>
+</div>
+`;

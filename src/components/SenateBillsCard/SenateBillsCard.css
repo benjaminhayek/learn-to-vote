@@ -1,0 +1,10 @@
+.bills-container {
+    border: 3px solid white;
+    padding: 10px;
+    margin: 10px;
+}
+
+.bill-title, .committee, .url {
+    color: white;
+    font-size: .5em;
+}

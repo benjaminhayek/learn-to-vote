@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { toggleSelected } from '../../actions'
-
 import './MemberCard.css'
 
 export class MemberCard extends Component {
