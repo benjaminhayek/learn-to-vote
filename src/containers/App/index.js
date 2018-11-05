@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import Header from '../../components/Header';
 import { contentStatus } from '../../actions'
 import { fetchCongress, fetchSenators, getBills } from '../../actions/Thunks';
+import ErrorPage from '../../components/ErrorPage';
 import MemberContainer from '../../components/MemberContainer';
 import SenateContainer from '../../components/SenateContainer';
 import './App.css';
@@ -34,6 +35,7 @@ export class App extends Component {
         <Route exact path='/compareSenate' render={() => (
           <SenateContainer senators={senators} bills={bills}/>
         )} />
+        <Route path='*' exact={true} component={ErrorPage} />
       </div>
     );
   }
