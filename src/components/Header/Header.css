@@ -1,3 +1,34 @@
+.header {
+    display: flex;
+    justify-content: space-around;
+}
+
 .header-title {
-    text-align: center;
+    align-items: flex-start;
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 3em;
+    color: #DF001D;
+}
+
+.instructs {
+    color: #FF3800;
+    font-size: 1em;
+    font-family: 'Fredericka the Great', cursive;
+
+}
+
+.switch {
+    background: transparent;
+    border: none;
+    align-content: flex-end;
+    margin-top: 20px;
+}
+
+.debate-pic {
+    height: 50px;
+}
+
+.compare-btn {
+    background: transparent;
+    border: none;
 }
