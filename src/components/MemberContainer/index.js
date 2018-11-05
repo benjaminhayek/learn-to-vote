@@ -2,21 +2,24 @@ import React, { Component } from 'react';
 import Card from '../../containers/MemberCard';
 import MemberBillsCard from '../MemberBillsCard';
 import './MemberContainer.css';
-import { Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { educationBills } from '../../utils/dataCleaners';
 import PropTypes from 'prop-types';
+import loadingGif from '../../utils/assets/loading-gif.gif';
 
 export class MemberContainer extends Component {
     constructor() {
       super()
       this.state = {
-        bills: []
+        bills: [],
+        loading: true
       }
     }
     resetState = () => {
       this.setState({bills: []})
     }
     handleSubmit = async (event) => {
+    this.setState({loading: false})
     const { congressmen } = this.props
     const selectedCount = congressmen.filter(member => member.selected)
     const memberBills = await educationBills(selectedCount[0].id, selectedCount[1].id)
@@ -26,11 +29,12 @@ export class MemberContainer extends Component {
       url: bills.url
     }))
     if(displayMembersBill.length) {
-    this.setState({bills: displayMembersBill})
+    this.setState({bills: displayMembersBill, loading: true})
     } else {alert('there are no bills to compare')}
   }
     render() {
     const { congressmen } = this.props;
+    const { loading } = this.state;
     let uuidv4 = require("uuid/v4");
     const selectedCount = congressmen.filter(member => member.selected)
     const isEnabled = selectedCount.length === 2;
@@ -57,6 +61,11 @@ export class MemberContainer extends Component {
         );
       });
     const showButton = selectedCount.length >= 1 && selectedCount.length < 3  ? true : false
+    if(!loading){
+      return (<div className='load'> 
+                <img className='load-image'src={loadingGif} /> 
+              </div>)
+    } else {
     return(
       <div>
         {
@@ -71,11 +80,14 @@ export class MemberContainer extends Component {
           </div>
         }
           <div>
-            <h1 className='container-title'>Your Congressmen</h1>
-            <h1 className='card-container' onClick={this.resetState}>{displayMembers}</h1>
+            <Link to='/' style={{ textDecoration: 'none' }}>
+              <h1 className='container-title'>Your Congressmen</h1>
+              <h1 className='card-container' onClick={this.resetState}>{displayMembers}</h1>
+            </Link>
           </div>
       </div>
-    )
+      )
+    }
   }
 }
 
