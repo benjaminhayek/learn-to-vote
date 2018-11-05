@@ -35,7 +35,7 @@ export const mapDispatchToProps = (dispatch) => ({
 })
 
 SenateCard.propTypes = {
-    senator: PropTypes.array
+    senator: PropTypes.object
   }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SenateCard)

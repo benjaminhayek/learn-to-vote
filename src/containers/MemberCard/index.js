@@ -35,7 +35,7 @@ export const mapDispatchToProps = (dispatch) => ({
 })
 
 MemberCard.propTypes = {
-    congressmen: PropTypes.array
+    congressmen: PropTypes.object
   }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MemberCard)
