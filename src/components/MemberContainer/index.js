@@ -29,7 +29,7 @@ export class MemberContainer extends Component {
       url: bills.url
     }))
     if(displayMembersBill.length) {
-    this.setState({bills: displayMembersBill, loading: true})
+    this.setState({bills: displayMembersBill, loading: false})
     } else {alert('there are no bills to compare')}
   }
     render() {

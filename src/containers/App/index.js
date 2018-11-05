@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Route, withRouter } from 'react-router-dom';
+import { Route, withRouter, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Header from '../../components/Header';
-import { contentStatus } from '../../actions'
+import { contentStatus } from '../../actions';
 import { fetchCongress, fetchSenators, getBills } from '../../actions/Thunks';
 import ErrorPage from '../../components/ErrorPage';
 import MemberContainer from '../../components/MemberContainer';
@@ -23,19 +23,21 @@ export class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Route exact path='/' render={() =>(
-          <MemberContainer congressmen={congressmen} bills={bills}/>
-        )} />
-        <Route exact path='/senators' render={() => (
-          <SenateContainer senators={senators} bills={bills}/>
-        )} />
-        <Route exact path='/compareCongress' render={() => (
-          <MemberContainer congressmen={congressmen} bills={bills}/>
-        )} />
-        <Route exact path='/compareSenate' render={() => (
-          <SenateContainer senators={senators} bills={bills}/>
-        )} />
-        <Route path='*' exact={true} component={ErrorPage} />
+        <Switch>
+          <Route exact path='/' render={() =>(
+            <MemberContainer congressmen={congressmen} bills={bills}/>
+          )} />
+          <Route exact path='/senators' render={() => (
+            <SenateContainer senators={senators} bills={bills}/>
+          )} />
+          <Route exact path='/compareCongress' render={() => (
+            <MemberContainer congressmen={congressmen} bills={bills}/>
+          )} />
+          <Route exact path='/compareSenate' render={() => (
+            <SenateContainer senators={senators} bills={bills}/>
+          )} />
+          <Route path='*' exact={true} component={ErrorPage} />
+        </Switch>
       </div>
     );
   }
