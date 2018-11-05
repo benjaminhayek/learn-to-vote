@@ -12,14 +12,14 @@ export class MemberContainer extends Component {
       super()
       this.state = {
         bills: [],
-        loading: true
+        loading: false
       }
     }
     resetState = () => {
       this.setState({bills: []})
     }
     handleSubmit = async (event) => {
-    this.setState({loading: false})
+    this.setState({loading: true})
     const { congressmen } = this.props
     const selectedCount = congressmen.filter(member => member.selected)
     const memberBills = await educationBills(selectedCount[0].id, selectedCount[1].id)
@@ -61,7 +61,7 @@ export class MemberContainer extends Component {
         );
       });
     const showButton = selectedCount.length >= 1 && selectedCount.length < 3  ? true : false
-    if(!loading){
+    if(loading){
       return (<div className='load'> 
                 <img className='load-image'src={loadingGif} /> 
               </div>)
