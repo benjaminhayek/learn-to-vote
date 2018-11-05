@@ -16,6 +16,11 @@
     text-align: center
 }
 
+.apple {
+    height: 25px;
+    float: right;
+}
+
 .name {
     font-size: 1em;
 }

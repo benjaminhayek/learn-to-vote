@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { toggleSelected } from '../../actions';
 import PropTypes from 'prop-types';
-import './MemberCard.css'
+import Apple from '../../utils/assets/apple.svg';
+import Apple2 from '../../utils/assets/apple2.svg';
+import './MemberCard.css';
 
 export class MemberCard extends Component {
     constructor() {
@@ -17,6 +19,7 @@ export class MemberCard extends Component {
         const { congressmen } = this.props
         return(
             <div onClick={this.toggleSelect} className={congressmen.party === 'D' ? 'dem' : 'rep'}>
+                <img src={congressmen.selected ? Apple2 : Apple} className='apple' />
                 <h1 className='name'>{congressmen.name}</h1>
                 <h2 className='title'>{congressmen.title}</h2>
                 <h2 className='party'>{congressmen.party}</h2>

@@ -10,6 +10,11 @@
     padding: 5px;
 }
 
+.apple {
+    height: 25px;
+    float: right;
+}
+
 .election-date {
     font-size: .75em;
 }
