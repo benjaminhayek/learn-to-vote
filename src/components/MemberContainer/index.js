@@ -12,6 +12,9 @@ export class MemberContainer extends Component {
         bills: []
       }
     }
+    resetState = () => {
+      this.setState({bills: []})
+    }
     handleSubmit = async (event) => {
     const { congressmen } = this.props
     const selectedCount = congressmen.filter(member => member.selected)
@@ -66,7 +69,7 @@ export class MemberContainer extends Component {
         }
         <div>
             <h1 className='container-title'>Your Congressmen</h1>
-            <h1 className='card-container'>{displayMembers}</h1>
+            <h1 className='card-container' onClick={this.resetState}>{displayMembers}</h1>
         </div>
       </div>
     )
