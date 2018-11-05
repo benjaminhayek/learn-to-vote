@@ -26,4 +26,10 @@ describe('MemberContainer', () => {
     wrapper.instance().handleSubmit();
     expect(wrapper.state().bills).toEqual(expected);
   });
+
+  it('should reset the state on click', () => {
+    const expected = []
+    wrapper.instance().resetState()
+    expect(wrapper.state().bills).toEqual(expected)
+  })
 })
