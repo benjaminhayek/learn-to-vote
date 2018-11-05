@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Card from '../../containers/MemberCard';
 import MemberBillsCard from '../MemberBillsCard';
 import './MemberContainer.css';
+import { Link, Route } from 'react-router-dom';
 import { educationBills } from '../../utils/dataCleaners';
 import PropTypes from 'prop-types';
 
@@ -61,16 +62,18 @@ export class MemberContainer extends Component {
         {
           showButton &&
           <div>
-            <h1 className='container-title'>{selectedCount ? 'You have Selected' : ''}</h1>
-            <h1 className='card-container'>{displaySelected}</h1>
-            <button onClick={this.handleSubmit} disabled={!isEnabled}>Compare Congressmen</button>
-            <h1>{displayBills}</h1>
+            <Link to='/compareCongress' style={{ textDecoration: 'none' }}>
+              <h1 className='container-title'>{selectedCount ? 'You have Selected' : ''}</h1>
+              <h1 className='card-container'>{displaySelected}</h1>
+              <h1>{displayBills}</h1>
+              <button onClick={this.handleSubmit} disabled={!isEnabled}>Compare Congressmen</button>
+            </Link>
           </div>
         }
-        <div>
+          <div>
             <h1 className='container-title'>Your Congressmen</h1>
             <h1 className='card-container' onClick={this.resetState}>{displayMembers}</h1>
-        </div>
+          </div>
       </div>
     )
   }

@@ -43,7 +43,7 @@ describe('Thunks', () => {
           })
         }))
 
-        const thunk = fetchCongress(mockUrl, status)
+        const thunk = fetchCongress(mockCongress)
         
         await thunk(mockDispatch)
 

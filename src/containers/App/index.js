@@ -28,6 +28,9 @@ export class App extends Component {
         <Route exact path='/senators' render={() => (
           <SenateContainer senators={senators} bills={bills}/>
         )} />
+        <Route exact path='/compareCongress' render={() => (
+          <MemberContainer congressmen={congressmen} bills={bills}/>
+        )} />
       </div>
     );
   }
