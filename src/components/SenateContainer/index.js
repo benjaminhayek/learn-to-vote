@@ -5,6 +5,7 @@ import SenateBillsCard from '../SenateBillsCard';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import loadingGif from '../../utils/assets/loading-gif.gif';
+import comparePic from '../../utils/assets/debate.svg';
 import './SenateContainer.css';
 
 export class SenateContainer extends Component {
@@ -70,7 +71,7 @@ export class SenateContainer extends Component {
               <h1 className='container-title'>{selectedCount ? 'You have Selected' : ''}</h1>
               <h1 className='card-container'>{displaySelected}</h1>
               <h1>{displayBills}</h1>
-              <button onClick={this.handleSubmit}>Compare Senators</button>
+              <button className='compare-btn' onClick={this.handleSubmit}><img className='compare-pic' src={comparePic}/>Compare Senators</button>
             </Link>
           </div>
         }

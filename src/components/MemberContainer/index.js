@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { educationBills } from '../../utils/dataCleaners';
 import PropTypes from 'prop-types';
 import loadingGif from '../../utils/assets/loading-gif.gif';
+import comparePic from '../../utils/assets/debate.svg';
 
 export class MemberContainer extends Component {
     constructor() {
@@ -75,7 +76,7 @@ export class MemberContainer extends Component {
               <h1 className='container-title'>{selectedCount ? 'You have Selected' : ''}</h1>
               <h1 className='card-container'>{displaySelected}</h1>
               <h1>{displayBills}</h1>
-              <button onClick={this.handleSubmit} disabled={!isEnabled}>Compare Congressmen</button>
+              <button onClick={this.handleSubmit} className='compare-btn' disabled={!isEnabled}><img className='compare-pic' src={comparePic}/>Compare Congressmen</button>
             </Link>
           </div>
         }

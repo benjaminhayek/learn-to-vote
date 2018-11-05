@@ -7,3 +7,13 @@
   .container-title {
     color: white;
   }
+
+  .compare-pic {
+    background-color: transparent;
+    border: none;
+  }
+
+  .compare-btn {
+    background: transparent;
+    border: none;
+  }
