@@ -22,8 +22,12 @@ export class App extends Component {
     return (
       <div className="App">
         <Header />
-        <MemberContainer congressmen={congressmen} bills={bills}/>
-        <SenateContainer senators={senators} bills={bills}/>
+        <Route exact path='/' render={() =>(
+          <MemberContainer congressmen={congressmen} bills={bills}/>
+        )} />
+        <Route exact path='/senators' render={() => (
+          <SenateContainer senators={senators} bills={bills}/>
+        )} />
       </div>
     );
   }
