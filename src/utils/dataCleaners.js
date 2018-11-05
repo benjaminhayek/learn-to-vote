@@ -1,6 +1,6 @@
 import { initialCongressFetch, initialSenateFetch, comparePositions, getSponsors, compareSenators } from './ApiCals';
 
-export const congressData = async (data) => {
+export const congressData = async () => {
     const congressmen = await initialCongressFetch()
     const eachMember = congressmen.results.map((member) => {
         return {

@@ -1,5 +1,4 @@
 .dem {
-    border: 3px solid blue;
     margin: 5px;
     padding: 5px;
     color: blue;
@@ -7,8 +6,12 @@
     text-align: center
 }
 
+.dem, .rep {
+    background-image: url('../../utils/assets/chalkboard.jpg');
+    background-size: 310px 230px;
+}
+
 .rep {
-    border: 3px solid red;
     margin: 5px;
     padding: 5px;
     color: red;
