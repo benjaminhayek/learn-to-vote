@@ -21,7 +21,9 @@ export class MemberContainer extends Component {
       committee: bills.committees,
       url: bills.url
     }))
+    if(displayMembersBill.length) {
     this.setState({bills: displayMembersBill})
+    } else {alert('there are no bills to compare')}
   }
     render() {
     const { congressmen } = this.props;
