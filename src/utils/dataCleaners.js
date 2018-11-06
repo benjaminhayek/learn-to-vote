@@ -1,8 +1,8 @@
 import { getMembers, getPosition, comparePositions, getSponsors, compareSenators } from './ApiCals';
 
-export const congressData = async (chamber) => {
-    const congressmen = await getMembers(chamber)
-    const eachMember = congressmen.results.map((member) => {
+export const memberData = async (chamber) => {
+    const members = await getMembers(chamber)
+    const eachMember = members.results.map((member) => {
         return {
             name: member.name,
             party: member.party,
@@ -13,21 +13,6 @@ export const congressData = async (chamber) => {
         };
       });
       return eachMember;
-}
-
-export const senateData = async (chamber) => {
-    const senators = await getMembers(chamber)
-    const eachSenator = senators.results.map((senator) => {
-        return {
-            name: senator.name,
-            party: senator.party,
-            title: senator.role,
-            id: senator.id,
-            nextElection: senator.next_election,
-            selected: false,
-        };
-      });
-      return eachSenator;
 }
 
 export const educationBills = async (id1, id2) => {
