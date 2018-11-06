@@ -1,4 +1,4 @@
-import { addCongressmen, contentStatus, addSenators, getEducation } from './index';
+import { addCongressmen, contentStatus, addSenators } from './index';
 import { memberData} from '../utils/dataCleaners';
 
 export const fetchCongress = (chamber) => {

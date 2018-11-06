@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Card from '../../containers/SenateCard';
-import { senateEducationBills } from '../../utils/dataCleaners';
+import { educationBills } from '../../utils/dataCleaners';
 import SenateBillsCard from '../SenateBillsCard';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -20,7 +20,7 @@ export class SenateContainer extends Component {
     this.setState({loading: true})
     const { senators } = this.props;
     const selectedCount = senators.filter(senator => senator.selected)
-    const senateBills = await senateEducationBills(selectedCount[0].id, selectedCount[1].id, 'senate')
+    const senateBills = await educationBills(selectedCount[0].id, selectedCount[1].id, 'senate')
     const displaySenateBill = senateBills.map(bills => ({
       title: bills.title,
       committee: bills.committees,

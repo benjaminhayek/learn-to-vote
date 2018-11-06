@@ -27,7 +27,9 @@ export class MemberContainer extends Component {
     const displayMembersBill = memberBills.map(bills => ({
       title: bills.title,
       committee: bills.committees,
-      url: bills.url
+      url: bills.url,
+      position1: bills.position1[0].position,
+      position2: bills.position2[0].position,
     }))
     if(displayMembersBill.length) {
     this.setState({bills: displayMembersBill, loading: false})
