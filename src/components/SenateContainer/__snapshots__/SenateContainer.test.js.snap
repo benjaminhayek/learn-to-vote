@@ -21,7 +21,7 @@ exports[`SenateContainer should match the snapshot 1`] = `
         className="card-container"
       >
         <Connect(SenateCard)
-          key="f297d288-851e-4ea7-bddd-2e860af6c511"
+          key="a36a03e4-5d6c-4ceb-a739-80b12ba8f6ca"
           senator={
             Object {
               "id": 2,
@@ -34,7 +34,7 @@ exports[`SenateContainer should match the snapshot 1`] = `
           }
         />
         <Connect(SenateCard)
-          key="b0ec0a02-cf9e-49c9-bf19-b6a69b8f3e9d"
+          key="bdb2c030-fc31-41f3-a04d-d597393499e5"
           senator={
             Object {
               "id": 2,

@@ -105,11 +105,4 @@ describe('mapDispatchToProps', () => {
     mappedProps.contentStatus('loading');
     expect(mockDispatch).toHaveBeenCalled();
   });
-
-  it('should call dispatch when getBills is invoked', () => {
-    const mockDispatch = jest.fn();
-    const mappedProps = mapDispatchToProps(mockDispatch);
-    mappedProps.getBills({bill: 'i am a bill'});
-    expect(mockDispatch).toHaveBeenCalled();
-  });
 })

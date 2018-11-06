@@ -18,7 +18,7 @@ exports[`MemberBillsCard should match the snapshot 1`] = `
   <h2
     className="position"
   >
-    Senator 1:
+    Senator 1: 
   </h2>
   <h2
     className="position"
