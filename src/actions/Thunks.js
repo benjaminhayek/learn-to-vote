@@ -1,4 +1,4 @@
-import { initialCongressFetch, initialSenateFetch, getEducationBills } from '../utils/ApiCals'; 
+import { getEducationBills } from '../utils/ApiCals'; 
 import { addCongressmen, contentStatus, addSenators, getEducation } from './index';
 import { congressData, senateData } from '../utils/dataCleaners';
 

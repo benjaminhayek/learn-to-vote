@@ -80,7 +80,7 @@ export const senateEducationBills = async (id1, id2) => {
         const name2 = bill.position2.map(bill => bill.name)
         const match = name1.filter(name => name === bill.billName)
         const match2 = name2.filter(name => name === bill.billName)
-        return match, match2
+        return [...match, ...match2]
     })
     const cleanedResults = filteredResult.filter(bill => 
         (bill.committees.includes('Education'))
