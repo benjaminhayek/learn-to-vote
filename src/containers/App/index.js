@@ -4,7 +4,7 @@ import { Route, withRouter, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Header from '../../components/Header';
 import { contentStatus } from '../../actions';
-import { fetchCongress, fetchSenators, getBills } from '../../actions/Thunks';
+import { fetchCongress, fetchSenators } from '../../actions/Thunks';
 import ErrorPage from '../../components/ErrorPage';
 import MemberContainer from '../../components/MemberContainer';
 import SenateContainer from '../../components/SenateContainer';

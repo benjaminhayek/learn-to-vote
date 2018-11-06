@@ -20,7 +20,7 @@ export class SenateContainer extends Component {
     this.setState({loading: true})
     const { senators } = this.props;
     const selectedCount = senators.filter(senator => senator.selected)
-    const senateBills = await senateEducationBills(selectedCount[0].id, selectedCount[1].id)
+    const senateBills = await senateEducationBills(selectedCount[0].id, selectedCount[1].id, 'senate')
     const displaySenateBill = senateBills.map(bills => ({
       title: bills.title,
       committee: bills.committees,

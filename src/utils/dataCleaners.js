@@ -15,8 +15,8 @@ export const memberData = async (chamber) => {
       return eachMember;
 }
 
-export const educationBills = async (id1, id2) => {
-    const bills = await comparePositions(id1, id2)
+export const educationBills = async (id1, id2, chamber) => {
+    const bills = await comparePositions(id1, id2, chamber)
     const unresolvedPromises = await bills.map(async(bill) => {
         const website = await getSponsors(bill.api_uri)
         return {
@@ -32,8 +32,8 @@ export const educationBills = async (id1, id2) => {
     return cleanedResults
 }
 
-export const senateEducationBills = async (id1, id2) => {
-    const bills = await compareSenators(id1, id2)
+export const senateEducationBills = async (id1, id2, chamber) => {
+    const bills = await comparePositions(id1, id2, chamber)
     const unresolvedPromises = await bills.map(async(bill) => {
         const website = await getSponsors(bill.api_uri)
         const position = await getPosition(id1)

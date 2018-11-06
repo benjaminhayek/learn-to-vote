@@ -19,11 +19,11 @@ export class MemberContainer extends Component {
     resetState = () => {
       this.setState({bills: []})
     }
-    handleSubmit = async (event) => {
+    handleSubmit = async () => {
     this.setState({loading: true})
     const { congressmen } = this.props
     const selectedCount = congressmen.filter(member => member.selected)
-    const memberBills = await educationBills(selectedCount[0].id, selectedCount[1].id)
+    const memberBills = await educationBills(selectedCount[0].id, selectedCount[1].id, 'house')
     const displayMembersBill = memberBills.map(bills => ({
       title: bills.title,
       committee: bills.committees,
