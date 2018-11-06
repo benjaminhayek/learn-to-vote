@@ -1,10 +1,11 @@
 .bills-container {
-    border: 3px solid white;
     padding: 10px;
     margin: 10px;
+    background: url('../../utils/assets/notepad.png');
+    width: 400px;
 }
 
 .bill-title, .committee, .url {
-    color: white;
+    color: black;
     font-size: .5em;
 }

@@ -10,7 +10,7 @@ describe('MemberContainer', () => {
   beforeEach(() => {
     bills = [{title: 'Bill1', committee: 'House', url:'www.gov.com'}];
     congressmen = [{name: 'Ted', id: 1, party: 'D', title: 'Representative', nextElection: '2018', selected: false}, {name: 'Jan', id: 2, party: 'R', title: 'Representative', nextElection: '2018', selected: false}];    
-    wrapper = shallow(<MemberContainer congressmen={congressmen}/>);
+    wrapper = shallow(<MemberContainer congressmen={congressmen} />);
   })
 
   it('should match the snapshot', () => {
@@ -31,5 +31,11 @@ describe('MemberContainer', () => {
     const expected = []
     wrapper.instance().resetState()
     expect(wrapper.state().bills).toEqual(expected)
+  })
+
+  it.skip('should call educationBills on click', async () => {
+    let educationBills = jest.fn()
+    wrapper.find('compare-btn').simulate('click');
+    expect(handleSubmit).toHaveBeenCalled()
   })
 })

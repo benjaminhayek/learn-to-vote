@@ -1,10 +1,20 @@
 .bills-container {
-    border: 3px solid white;
+    display: flex;
+    flex-wrap: wrap;
     padding: 10px;
     margin: 10px;
+    background: url('../../utils/assets/notepad.png');
+    width: 400px;
+    height: 460px;
 }
 
 .bill-title, .committee, .url, .position {
-    color: white;
+    color: black;
     font-size: .5em;
+    font-family: 'Neucha', cursive;
+    margin-left: 35px;
+}
+
+.committee {
+    margin-top: 45px;
 }

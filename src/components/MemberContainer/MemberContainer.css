@@ -19,3 +19,8 @@
     background: transparent;
     border: none;
   }
+
+  .bill-container {
+    display: flex;
+    flex-wrap: wrap;
+  }

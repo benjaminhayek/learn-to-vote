@@ -1,4 +1,4 @@
-import { initialCongressFetch, initialSenateFetch, getState, getEducationBills, comparePositions, compareSenators, getSponsors } from './ApiCals';
+import { getPosition, initialCongressFetch, initialSenateFetch, getState, getEducationBills, comparePositions, compareSenators, getSponsors } from './ApiCals';
 import { key } from './ApiKey'
 
 describe('API', () => {
@@ -131,6 +131,27 @@ describe('API', () => {
           ]
 
         getSponsors(url);
+        expect(window.fetch).toHaveBeenCalledWith(...expected);
+      });
+
+      it('calls fetch with the correct params', () => {
+        const url = "https://api.propublica.org/congress/v1/members/undefined/votes.json"
+        window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+            status: 200,
+            json: () => Promise.resolve({
+                bills: []
+            })
+          }))
+    
+          const expected = [ 
+            url, {
+              headers: {
+                'X-API-Key': key
+              }
+            }
+          ]
+
+        getPosition();
         expect(window.fetch).toHaveBeenCalledWith(...expected);
       });
 })
