@@ -9,7 +9,7 @@
 }
 
 .bill-title, .committee, .url, .position {
-    color: black;
+    color: #454343;
     font-size: .5em;
     font-family: 'Neucha', cursive;
     margin-left: 35px;

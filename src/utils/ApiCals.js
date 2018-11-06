@@ -1,8 +1,8 @@
 import { key } from './ApiKey';
 
-export const initialCongressFetch = async () => {
+export const initialCongressFetch = async (val) => {
     const state = await getState()
-    const url = `https://api.propublica.org/congress/v1/members/house/${state}/current.json`;
+    const url = `https://api.propublica.org/congress/v1/members/house/${val || state}/current.json`;
   
     const response = await fetch(url, {
       headers: {

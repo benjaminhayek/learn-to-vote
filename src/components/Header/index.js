@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import debatePic from '../../utils/assets/debate2.svg'
+import debatePic from '../../utils/assets/debate2.svg';
 import './Header.css';
 
 export class Header extends Component{
