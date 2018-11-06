@@ -5,12 +5,8 @@ import { shallow } from 'enzyme';
 
 describe('APP', () => {
   let wrapper;
-  let mockFetch;
-  let mockCongress;
 
   beforeEach(() => {
-    mockFetch = jest.fn();
-    mockCongress = [];
     wrapper = shallow(
       <App />
     )

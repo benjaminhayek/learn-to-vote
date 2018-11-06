@@ -17,6 +17,7 @@ exports[`HEADER should match the snapshot 1`] = `
       className="switch"
     >
       <img
+        alt="debate-pic"
         className="debate-pic"
         src="debate2.svg"
       />

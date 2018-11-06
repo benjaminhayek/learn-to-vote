@@ -62,7 +62,7 @@ export class SenateContainer extends Component {
     const showButton = selectedCount.length >= 1 ? true : false
     if(loading){
       return (<div className='load'> 
-                <img className='load-image'src={loadingGif} /> 
+                <img alt='load' className='load-image'src={loadingGif} /> 
               </div>)
     } else { 
     return(
@@ -74,7 +74,7 @@ export class SenateContainer extends Component {
               <h1 className='container-title'>{selectedCount ? 'You have Selected' : ''}</h1>
               <h1 className='card-container'>{displaySelected}</h1>
               <h1 className='bill-container'>{displayBills}</h1>
-              <button className='compare-btn' onClick={this.handleSubmit}><img className='compare-pic' src={comparePic}/>Compare Senators</button>
+              <button className='compare-btn' onClick={this.handleSubmit}><img alt='compare-pic' className='compare-pic' src={comparePic}/>Compare Senators</button>
             </Link>
           </div>
         }

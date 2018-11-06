@@ -3,9 +3,6 @@ import PropTypes from 'prop-types';
 import './SenateBillsCard.css';
 
 export class SenateBillsCard extends Component {
-    constructor() {
-        super()
-    }
 
     render() {
         const { bills } = this.props     

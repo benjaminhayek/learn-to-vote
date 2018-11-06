@@ -4,9 +4,6 @@ import debatePic from '../../utils/assets/debate2.svg';
 import './Header.css';
 
 export class Header extends Component{
-    constructor(){
-        super()
-    }
 
     render(){
         const { pathname } = window.location;
@@ -17,7 +14,7 @@ export class Header extends Component{
                 {
                     senators &&
                     <Link to='/senators' >
-                        <button className='switch'><img className='debate-pic' src={debatePic}/>
+                        <button className='switch'><img className='debate-pic' alt='debate-pic' src={debatePic}/>
                             <h2 className='instructs'>Click here to see senators</h2>
                         </button>
                     </Link>
@@ -25,7 +22,7 @@ export class Header extends Component{
                 {
                     !senators && 
                     <Link to='/' >
-                        <button className='switch'><img className='debate-pic' src={debatePic}/>
+                        <button className='switch'><img className='debate-pic' alt='debate-pic' src={debatePic}/>
                             <h2 className='instructs'>Click here to see congressmen</h2>
                         </button>
                     </Link>

@@ -3,10 +3,6 @@ import './MemberBillsCard.css';
 import PropTypes from 'prop-types';
 
 export class MemberBillsCard extends Component {
-    constructor() {
-        super()
-    }
-
     render() {
         const { bills } = this.props       
         return(

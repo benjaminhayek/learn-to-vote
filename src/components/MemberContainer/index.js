@@ -64,7 +64,7 @@ export class MemberContainer extends Component {
     const showButton = selectedCount.length >= 1 && selectedCount.length < 3  ? true : false
     if(loading){
       return (<div className='load'> 
-                <img className='load-image'src={loadingGif} /> 
+                <img alt='load-img' className='load-image'src={loadingGif} /> 
               </div>)
     } else {
     return(
@@ -76,7 +76,7 @@ export class MemberContainer extends Component {
               <h1 className='container-title'>{selectedCount ? 'You have Selected' : ''}</h1>
               <h1 className='card-container'>{displaySelected}</h1>
               <h1 className='bill-container'>{displayBills}</h1>
-              <button onClick={this.handleSubmit} className='compare-btn' disabled={!isEnabled}><img className='compare-pic' src={comparePic}/>Compare Congressmen</button>
+              <button onClick={this.handleSubmit} className='compare-btn' disabled={!isEnabled}><img alt='compare-pic' className='compare-pic' src={comparePic}/>Compare Congressmen</button>
             </Link>
           </div>
         }

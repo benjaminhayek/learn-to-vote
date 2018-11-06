@@ -7,9 +7,6 @@ import Apple2 from '../../utils/assets/apple2.svg';
 import './SenateCard.css'
 
 export class SenateCard extends Component {
-    constructor() {
-        super()
-    }
 
     toggleSelect = () => {
         this.props.toggleSelected(this.props.senator.id)
@@ -19,7 +16,7 @@ export class SenateCard extends Component {
         const { senator } =this.props       
         return(
             <div onClick={this.toggleSelect} className={senator.party === 'D' ? 'dem' : 'rep'}>
-                <img src={senator.selected ? Apple2 : Apple} className='apple' />
+                <img alt='apple' src={senator.selected ? Apple2 : Apple} className='apple' />
                 <h1 className='name'>{senator.name}</h1>
                 <h2 className='title'>{senator.title}</h2>
                 <h2 className='party'>{senator.party}</h2>

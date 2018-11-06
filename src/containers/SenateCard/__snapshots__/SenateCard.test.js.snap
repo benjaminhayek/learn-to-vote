@@ -6,6 +6,7 @@ exports[`SenateCard should match the snapshot 1`] = `
   onClick={[Function]}
 >
   <img
+    alt="apple"
     className="apple"
     src="apple.svg"
   />
