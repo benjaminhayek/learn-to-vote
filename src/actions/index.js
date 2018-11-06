@@ -13,11 +13,6 @@
     senator
   });
 
-  export const getEducation = (bills) => ({
-    type: 'GET_EDUCATION',
-    bills
-  })
-
   export const toggleSelected = (id) => ({
     type: 'TOGGLE_SELECTED',
     id

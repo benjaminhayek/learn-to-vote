@@ -29,21 +29,6 @@ export const getMembers = async (chamber) => {
     }
   }
 
-  export const getEducationBills = async () => {
-    try {
-      const url = "https://api.propublica.org/congress/v1/bills/search.json?query=education"
-      const response = await fetch(url, {
-        headers: {
-          'X-API-Key':key
-        }
-      });
-      const result = await response.json();
-      return result.results[0].bills
-    } catch(error) {
-      throw new Error(error.message)
-    }
-  }
-
   export const comparePositions = async (id1, id2) => {
     try {
       const url = `https://api.propublica.org/congress/v1/members/${id1}/bills/${id2}/115/house.json`

@@ -49,7 +49,6 @@ export const mapStateToProps = (state) => ({
 });
 
 export const mapDispatchToProps = (dispatch) => ({
-  // getBills: () => dispatch(getBills()),
   fetchCongress: (chamber) => dispatch(fetchCongress(chamber)),
   fetchSenators: (chamber) => dispatch(fetchSenators(chamber)),
   contentStatus: (loading) => dispatch(contentStatus(loading))
@@ -58,7 +57,6 @@ export const mapDispatchToProps = (dispatch) => ({
 App.propTypes = {
   senators: PropTypes.array,
   congressmen: PropTypes.array,
-  bills: PropTypes.array
 }
 
 export default withRouter(connect (mapStateToProps, mapDispatchToProps)(App));
