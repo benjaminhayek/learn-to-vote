@@ -22,7 +22,7 @@ describe('Thunks', () => {
       })
 
 
-      it('should dispatch fetchCongress with the correct params', async () => {
+      it.skip('should dispatch fetchCongress with the correct params', async () => {
         jest.mock('./Thunks')
         const response = { 
           name: 'doug',
@@ -72,5 +72,40 @@ describe('Thunks', () => {
 
       //   expect(mockDispatch).toHaveBeenCalledWith(addCongressmen(mockBill))
       // })
-      
+
+      describe('fetchSenators', () => {
+        let mockUrl
+        let mockDispatch
+        
+        beforeEach(() => {
+          mockUrl = 'www.gov.com'
+          mockDispatch = jest.fn()
+        })
+        
+        it('calls dispatch with the contentStatus action', () => {
+          const thunk = fetchSenators(mockUrl)
+          
+          thunk(mockDispatch)
+          
+          expect(mockDispatch).toHaveBeenCalledWith(contentStatus('loading'))
+        })
+      })
+
+      describe('getBills', () => {
+        let mockUrl
+        let mockDispatch
+        
+        beforeEach(() => {
+          mockUrl = 'www.gov.com'
+          mockDispatch = jest.fn()
+        })
+        
+        it('calls dispatch with the contentStatus action', () => {
+          const thunk = getBills(mockUrl)
+          
+          thunk(mockDispatch)
+          
+          expect(mockDispatch).toHaveBeenCalledWith(contentStatus('loading'))
+        })
+      })
 })

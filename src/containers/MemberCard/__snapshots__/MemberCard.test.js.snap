@@ -5,6 +5,10 @@ exports[`MemberCard should match the snapshot 1`] = `
   className="dem"
   onClick={[Function]}
 >
+  <img
+    className="apple"
+    src="apple.svg"
+  />
   <h1
     className="name"
   >

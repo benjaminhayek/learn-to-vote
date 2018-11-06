@@ -13,7 +13,7 @@ export class Header extends Component{
         const senators = pathname !== '/senators';
         return(
             <div className='header'>
-                <h1 className='header-title'>Teach Me How to Vote!</h1>
+                <h1 className='header-title'>Educate Yourself on Education!</h1>
                 {
                     senators &&
                     <Link to='/senators' >
