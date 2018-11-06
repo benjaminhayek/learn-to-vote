@@ -32,16 +32,6 @@ describe('actions', () => {
         expect(result).toEqual(expected);
       });
 
-      it('should have a type of GET_EDUCATION', () => {
-        const bills = [{}];
-        const expected = {
-          type: 'GET_EDUCATION',
-          bills
-        }
-        const result = getEducation(bills);
-        expect(result).toEqual(expected);
-      });
-
       it('should have a type of TOGGLE_SELECTED', () => {
         const id = '';
         const expected = {
