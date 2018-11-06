@@ -21,10 +21,13 @@ export class SenateContainer extends Component {
     const { senators } = this.props;
     const selectedCount = senators.filter(senator => senator.selected)
     const senateBills = await senateEducationBills(selectedCount[0].id, selectedCount[1].id)
+    console.log(senateBills)
     const displaySenateBill = senateBills.map(bills => ({
       title: bills.title,
       committee: bills.committees,
-      url: bills.url
+      url: bills.url,
+      position1: bills.position1[0].position,
+      position2: bills.position2[0].position,
     }))
     this.setState({bills: displaySenateBill, loading: false})
   }

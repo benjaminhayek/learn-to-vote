@@ -4,7 +4,7 @@
     margin: 10px;
 }
 
-.bill-title, .committee, .url {
+.bill-title, .committee, .url, .position {
     color: white;
     font-size: .5em;
 }
