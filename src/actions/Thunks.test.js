@@ -1,10 +1,9 @@
 import { fetchCongress, fetchSenators, getBills } from './Thunks';
 import { addCongressmen, contentStatus, addSenators, getEducation, toggleSelected } from './index';
-import { congressData, senateData } from '../utils/dataCleaners';
+import { memberData } from '../utils/dataCleaners';
 
 jest.mock('../utils/dataCleaners', () => ({
-  congressData: jest.fn().mockImplementation(() => Promise.resolve([])),
-  senateData: jest.fn().mockImplementation(() => Promise.resolve([]))
+  memberData: jest.fn().mockImplementation(() => Promise.resolve([]))
 }))
 
 jest.mock('../utils/ApiCals', () => ({
@@ -70,35 +69,6 @@ describe('Thunks', () => {
           await thunk(mockDispatch)
   
           expect(mockDispatch).toHaveBeenCalledWith(addSenators(mockSenate))
-        })
-      })
-
-      describe('getBills', () => {
-        let mockUrl
-        let mockDispatch
-        
-        beforeEach(() => {
-          mockUrl = 'www.gov.com'
-          mockDispatch = jest.fn()
-        })
-        
-        it('calls dispatch with the contentStatus action', () => {
-          const thunk = getBills(mockUrl)
-          
-          thunk(mockDispatch)
-          
-          expect(mockDispatch).toHaveBeenCalledWith(contentStatus('loading'))
-        })
-
-        it('should dispatch getBills with the correct params', async () => {
-          const mockBill = []
-          let mockDispatch = jest.fn()
-  
-          const thunk = getBills(mockBill)
-          
-          await thunk(mockDispatch)
-  
-          expect(mockDispatch).toHaveBeenCalledWith(getEducation(mockBill))
         })
       })
 })
