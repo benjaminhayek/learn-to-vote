@@ -32,7 +32,7 @@ export class MemberContainer extends Component {
       position2: bills.position2[0].position,
     }))
     if(displayMembersBill.length) {
-    this.setState({bills: displayMembersBill, loading: false})
+      this.setState({bills: displayMembersBill, loading: false})
     } else {alert('there are no bills to compare')}
   }
     render() {

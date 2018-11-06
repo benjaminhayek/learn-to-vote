@@ -1,6 +1,7 @@
 import React from 'react';
 import { MemberContainer } from './index';
 import { shallow } from 'enzyme';
+import { educationBills } from '../../utils/dataCleaners';
 
 describe('MemberContainer', () => {
   let wrapper;
@@ -29,11 +30,5 @@ describe('MemberContainer', () => {
     const expected = []
     wrapper.instance().resetState()
     expect(wrapper.state().bills).toEqual(expected)
-  })
-
-  it.skip('should call educationBills on click', async () => {
-    let handleSubmit = jest.fn();
-    wrapper.find('compare-btn').simulate('click');
-    expect(handleSubmit).toHaveBeenCalled()
   })
 })

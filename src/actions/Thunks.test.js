@@ -21,6 +21,18 @@ describe('Thunks', () => {
           mockUrl = 'www.gov.com'
           mockDispatch = jest.fn()
         })
+
+        it.skip('should dispatch contentStatus error if the response is not ok', async () => {
+          window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+            ok: false
+          }))
+          
+          const thunk = fetchCongress(mockUrl)
+          
+          await thunk(mockDispatch)
+          
+          expect(mockDispatch).toHaveBeenCalledWith(contentStatus('error'))
+        })
         
         it('calls dispatch with the contentStatus action', () => {
           const thunk = fetchCongress(mockUrl)

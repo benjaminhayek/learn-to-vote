@@ -1,5 +1,5 @@
-import { congressData, senateData, educationBills, senateEducationBills, memberData } from './dataCleaners';
-import { comparePositions, compareSenators, getSponsors } from './ApiCals';
+import { educationBills, memberData } from './dataCleaners';
+import * as API from './ApiCals.js';
 
 describe('dataCleaners', () => {
     it('should return a cleaned array of members', async () => {
@@ -23,6 +23,16 @@ describe('dataCleaners', () => {
     
         const result = await memberData()
         expect(result).toEqual(expected)
+      })
+
+      it.skip('should call compare positions with the correct params', async () => {
+        const result = { results: {bills: {}} }
+        window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+          okay: true,
+          json: () => Promise.resolve(result)
+        }))
+        const results = await API.comparePositions()
+        expect(results).toEqual({})
       })
 
       it.skip('should return a cleaned array of bills', async () => {
