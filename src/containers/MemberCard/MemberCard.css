@@ -1,19 +1,28 @@
-.dem {
-    border: 3px solid blue;
+.dem, .rep {
     margin: 5px;
     padding: 5px;
-    color: blue;
+    color: white;
     width: 300px;
-    text-align: center
+    text-align: center;
+    background-image: url('../../utils/assets/chalkboard.jpg');
+    background-size: 310px 255px;
+    font-family: 'Homemade Apple', cursive;
+    font-size: .75em;
 }
 
-.rep {
-    border: 3px solid red;
-    margin: 5px;
-    padding: 5px;
-    color: red;
-    width: 300px;
-    text-align: center
+.dem:hover {
+    border: 1px solid blue;
+}
+
+.rep:hover {
+    border: 1px solid red;
+}
+
+.apple {
+    height: 25px;
+    margin-right: 10px;
+    margin-top: 10px;
+    float: right;
 }
 
 .name {

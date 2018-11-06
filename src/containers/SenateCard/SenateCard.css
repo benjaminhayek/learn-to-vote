@@ -1,13 +1,18 @@
 .dem {
-    border: 3px solid blue;
+    /* border: 3px solid blue; */
     margin: 5px;
     padding: 5px;
 }
 
 .rep {
-    border: 3px solid red;
+    /* border: 3px solid red; */
     margin: 5px;
     padding: 5px;
+}
+
+.apple {
+    height: 25px;
+    float: right;
 }
 
 .election-date {

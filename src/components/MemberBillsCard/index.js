@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './MemberBillsCard.css';
+import PropTypes from 'prop-types';
 
 export class MemberBillsCard extends Component {
     constructor() {
@@ -16,6 +17,10 @@ export class MemberBillsCard extends Component {
             </div>
         )
     }
+}
+
+MemberBillsCard.propTypes = {
+    bills: PropTypes.object
 }
 
 export default MemberBillsCard

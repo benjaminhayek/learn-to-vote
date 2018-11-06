@@ -10,6 +10,7 @@ exports[`MemberContainer should match the snapshot 1`] = `
     </h1>
     <h1
       className="card-container"
+      onClick={[Function]}
     >
       <Connect(MemberCard)
         congressmen={
@@ -22,7 +23,7 @@ exports[`MemberContainer should match the snapshot 1`] = `
             "title": "Representative",
           }
         }
-        key="7bebdddc-76cd-4872-bd69-32ed7d09fd2f"
+        key="fd58226c-6246-4056-9ff9-515249dd1d82"
       />
       <Connect(MemberCard)
         congressmen={
@@ -35,7 +36,7 @@ exports[`MemberContainer should match the snapshot 1`] = `
             "title": "Representative",
           }
         }
-        key="0c3e6027-940a-410a-8bc4-d54f2bfb00ab"
+        key="4d7214cb-c599-45f6-a3eb-af23a3424ec3"
       />
     </h1>
   </div>

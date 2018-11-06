@@ -5,5 +5,17 @@
   }
 
   .container-title {
-    color: white;
+    color: #2A5C17;
+    text-align: center;
+    font-family: 'Fredericka the Great', cursive;
+  }
+
+  .compare-pic {
+    background-color: transparent;
+    border: none;
+  }
+
+  .compare-btn {
+    background: transparent;
+    border: none;
   }

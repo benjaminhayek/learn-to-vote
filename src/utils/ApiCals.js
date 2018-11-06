@@ -77,5 +77,16 @@ export const initialCongressFetch = async () => {
     return result.results[0].congressdotgov_url
   }
 
+  export const getPosition = async (id) => {
+    const url = `https://api.propublica.org/congress/v1/members/${id}/votes.json`
+    const response = await fetch(url, {
+      headers: {
+        'X-API-Key':key
+      }
+    });
+    const result = await response.json();
+    return result.results[0].votes
+  }
+
 
 // "https://api.propublica.org/congress/v1/members/P000593.json"

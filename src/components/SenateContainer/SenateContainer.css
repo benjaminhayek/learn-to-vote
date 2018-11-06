@@ -3,3 +3,13 @@
     flex-wrap: wrap;
     justify-content: center;
   }
+
+  .compare-pic {
+    background-color: transparent;
+    border: none;
+  }
+
+  .compare-btn {
+    background: transparent;
+    border: none;
+  }
