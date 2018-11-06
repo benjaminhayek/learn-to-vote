@@ -1,26 +1,9 @@
 import { key } from './ApiKey';
 
-export const initialCongressFetch = async (val) => {
+export const getMembers = async (chamber) => {
   const state = await getState()    
   try {
-      const url = `https://api.propublica.org/congress/v1/members/house/${val || state}/current.json`;
-    
-      const response = await fetch(url, {
-        headers: {
-          'X-API-Key':key
-        }
-      });
-      const result = await response.json();
-      return result
-    } catch(error) {
-      throw new Error(error.message)
-    }
-  };
-
-  export const initialSenateFetch = async () => {
-    const state = await getState()
-    try {
-      const url = `https://api.propublica.org/congress/v1/members/senate/${state}/current.json`;
+      const url = `https://api.propublica.org/congress/v1/members/${chamber}/${state}/current.json`;
     
       const response = await fetch(url, {
         headers: {
@@ -119,6 +102,3 @@ export const initialCongressFetch = async (val) => {
       throw new Error(error.message)
     }
   }
-
-
-// "https://api.propublica.org/congress/v1/members/P000593.json"

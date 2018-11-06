@@ -2,11 +2,11 @@ import { getEducationBills } from '../utils/ApiCals';
 import { addCongressmen, contentStatus, addSenators, getEducation } from './index';
 import { congressData, senateData } from '../utils/dataCleaners';
 
-export const fetchCongress = () => {
+export const fetchCongress = (chamber) => {
     return async dispatch => {
       dispatch(contentStatus('loading'))
       try {
-        const response = await congressData()
+        const response = await congressData(chamber)
         dispatch(addCongressmen(response))
         dispatch(contentStatus('resolved'))
       } catch (error) {
@@ -15,11 +15,11 @@ export const fetchCongress = () => {
     }
   }
 
-export const fetchSenators = () => {
+export const fetchSenators = (chamber) => {
     return async dispatch => {
       dispatch(contentStatus('loading'))
       try {
-        const response = await senateData()
+        const response = await senateData(chamber)
         dispatch(addSenators(response))
         dispatch(contentStatus('resolved'))
       } catch (error) {

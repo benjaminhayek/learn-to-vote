@@ -13,9 +13,8 @@ import './App.css';
 export class App extends Component {
 
   async componentDidMount() {
-    this.props.fetchCongress()
-    this.props.fetchSenators()
-    this.props.getBills()
+    this.props.fetchCongress('house')
+    this.props.fetchSenators('senate')
   }
 
   render() {
@@ -50,9 +49,9 @@ export const mapStateToProps = (state) => ({
 });
 
 export const mapDispatchToProps = (dispatch) => ({
-  getBills: () => dispatch(getBills()),
-  fetchCongress: () => dispatch(fetchCongress()),
-  fetchSenators: () => dispatch(fetchSenators()),
+  // getBills: () => dispatch(getBills()),
+  fetchCongress: (chamber) => dispatch(fetchCongress(chamber)),
+  fetchSenators: (chamber) => dispatch(fetchSenators(chamber)),
   contentStatus: (loading) => dispatch(contentStatus(loading))
 });
 
