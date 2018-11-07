@@ -5,14 +5,10 @@ import { shallow, mount } from 'enzyme';
 
 describe('MemberCard', () => {
   let wrapper;
-  let mockFetch;
-  let mockParty;
   let congressmen;
   let toggleSelected;
 
   beforeEach(() => {
-    mockFetch = jest.fn();
-    mockParty = 'D';
     toggleSelected = jest.fn()
     congressmen = {name: 'name', party: 'D', title: 'title'}
     wrapper = shallow(

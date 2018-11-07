@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Card from '../../containers/SenateCard';
-import { senateEducationBills } from '../../utils/dataCleaners';
+import { educationBills } from '../../utils/dataCleaners';
 import SenateBillsCard from '../SenateBillsCard';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -20,8 +20,7 @@ export class SenateContainer extends Component {
     this.setState({loading: true})
     const { senators } = this.props;
     const selectedCount = senators.filter(senator => senator.selected)
-    const senateBills = await senateEducationBills(selectedCount[0].id, selectedCount[1].id)
-    console.log(senateBills)
+    const senateBills = await educationBills(selectedCount[0].id, selectedCount[1].id, 'senate')
     const displaySenateBill = senateBills.map(bills => ({
       title: bills.title,
       committee: bills.committees,
@@ -62,7 +61,7 @@ export class SenateContainer extends Component {
     const showButton = selectedCount.length >= 1 ? true : false
     if(loading){
       return (<div className='load'> 
-                <img className='load-image'src={loadingGif} /> 
+                <img alt='load' className='load-image'src={loadingGif} /> 
               </div>)
     } else { 
     return(
@@ -73,8 +72,8 @@ export class SenateContainer extends Component {
             <Link to='/compareSenate' style={{ textDecoration: 'none' }}>
               <h1 className='container-title'>{selectedCount ? 'You have Selected' : ''}</h1>
               <h1 className='card-container'>{displaySelected}</h1>
-              <h1>{displayBills}</h1>
-              <button className='compare-btn' onClick={this.handleSubmit}><img className='compare-pic' src={comparePic}/>Compare Senators</button>
+              <h1 className='bill-container'>{displayBills}</h1>
+              <button className='compare-btn' onClick={this.handleSubmit}><img alt='compare-pic' className='compare-pic' src={comparePic}/>Compare Senators</button>
             </Link>
           </div>
         }

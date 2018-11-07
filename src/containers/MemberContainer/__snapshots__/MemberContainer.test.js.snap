@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SenateContainer should match the snapshot 1`] = `
+exports[`MemberContainer should match the snapshot 1`] = `
 <div>
   <div>
     <Link
@@ -10,41 +10,42 @@ exports[`SenateContainer should match the snapshot 1`] = `
           "textDecoration": "none",
         }
       }
-      to="/senators"
+      to="/"
     >
       <h1
         className="container-title"
       >
-        Your Senators
+        Your Congressmen
       </h1>
       <h1
         className="card-container"
+        onClick={null}
       >
-        <Connect(SenateCard)
-          key="3b5a0a03-daa9-44e2-8bc0-203e64a4f494"
-          senator={
+        <Connect(MemberCard)
+          congressmen={
             Object {
-              "id": 2,
-              "name": "Bob",
-              "nextElection": "2020",
-              "party": "R",
+              "id": 1,
+              "name": "Ted",
+              "nextElection": "2018",
+              "party": "D",
               "selected": false,
-              "title": "Senator",
+              "title": "Representative",
             }
           }
+          key="414d9e74-1a18-46c6-a199-c14dd9b56191"
         />
-        <Connect(SenateCard)
-          key="77727ae2-85d2-40b5-a39c-3ee7970c9cd2"
-          senator={
+        <Connect(MemberCard)
+          congressmen={
             Object {
               "id": 2,
               "name": "Jan",
               "nextElection": "2018",
               "party": "R",
               "selected": false,
-              "title": "Senator",
+              "title": "Representative",
             }
           }
+          key="d10724f2-021d-4e80-a4b3-3eceac96c83b"
         />
       </h1>
     </Link>

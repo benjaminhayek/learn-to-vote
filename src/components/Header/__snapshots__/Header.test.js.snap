@@ -7,7 +7,26 @@ exports[`HEADER should match the snapshot 1`] = `
   <h1
     className="header-title"
   >
-    Learn to Vote
+    Educate Yourself on Education!
   </h1>
+  <Link
+    replace={false}
+    to="/senators"
+  >
+    <button
+      className="switch"
+    >
+      <img
+        alt="debate-pic"
+        className="debate-pic"
+        src="debate2.svg"
+      />
+      <h2
+        className="instructs"
+      >
+        Click here to see senators
+      </h2>
+    </button>
+  </Link>
 </div>
 `;

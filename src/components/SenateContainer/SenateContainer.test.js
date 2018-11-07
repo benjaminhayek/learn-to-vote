@@ -5,10 +5,8 @@ import { shallow } from 'enzyme';
 describe('SenateContainer', () => {
   let wrapper;
   let senator;
-  let bills;
   
   beforeEach(() => {
-    bills = [{title: 'Bill1', committee: 'Senate', url:'www.gov.com'}];
     senator = [{name: 'Bob', id: 2, party: 'R', title: 'Senator', nextElection: '2020', selected: false}, {name: 'Jan', id: 2, party: 'R', title: 'Senator', nextElection: '2018', selected: false}];    
     wrapper = shallow(<SenateContainer senators={senator}/>);
   })

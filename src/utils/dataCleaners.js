@@ -1,8 +1,8 @@
-import { initialCongressFetch, getPosition, initialSenateFetch, comparePositions, getSponsors, compareSenators } from './ApiCals';
+import { getMembers, getPosition, comparePositions, getSponsors, compareSenators } from './ApiCals';
 
-export const congressData = async () => {
-    const congressmen = await initialCongressFetch()
-    const eachMember = congressmen.results.map((member) => {
+export const memberData = async (chamber) => {
+    const members = await getMembers(chamber)
+    const eachMember = members.results.map((member) => {
         return {
             name: member.name,
             party: member.party,
@@ -15,40 +15,8 @@ export const congressData = async () => {
       return eachMember;
 }
 
-export const senateData = async (data) => {
-    const senators = await initialSenateFetch()
-    const eachSenator = senators.results.map((senator) => {
-        return {
-            name: senator.name,
-            party: senator.party,
-            title: senator.role,
-            id: senator.id,
-            nextElection: senator.next_election,
-            selected: false,
-        };
-      });
-      return eachSenator;
-}
-
-export const educationBills = async (id1, id2) => {
-    const bills = await comparePositions(id1, id2)
-    const unresolvedPromises = await bills.map(async(bill) => {
-        const website = await getSponsors(bill.api_uri)
-        return {
-            url: website,
-            committees: bill.committees, 
-            title: bill.title,
-            }
-    })
-    const result = await  Promise.all(unresolvedPromises)
-    const cleanedResults = result.filter(bill => 
-        (bill.committees.includes('Education'))
-      )
-    return cleanedResults
-}
-
-export const senateEducationBills = async (id1, id2) => {
-    const bills = await compareSenators(id1, id2)
+export const educationBills = async (id1, id2, chamber) => {
+    const bills = await comparePositions(id1, id2, chamber)
     const unresolvedPromises = await bills.map(async(bill) => {
         const website = await getSponsors(bill.api_uri)
         const position = await getPosition(id1)
@@ -80,7 +48,7 @@ export const senateEducationBills = async (id1, id2) => {
         const name2 = bill.position2.map(bill => bill.name)
         const match = name1.filter(name => name === bill.billName)
         const match2 = name2.filter(name => name === bill.billName)
-        return match, match2
+        return [...match, ...match2]
     })
     const cleanedResults = filteredResult.filter(bill => 
         (bill.committees.includes('Education'))

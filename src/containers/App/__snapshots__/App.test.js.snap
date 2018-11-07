@@ -5,7 +5,32 @@ exports[`APP should match the snapshot 1`] = `
   className="App"
 >
   <Header />
-  <MemberContainer />
-  <SenateContainer />
+  <Switch>
+    <Route
+      exact={true}
+      path="/"
+      render={[Function]}
+    />
+    <Route
+      exact={true}
+      path="/senators"
+      render={[Function]}
+    />
+    <Route
+      exact={true}
+      path="/compareCongress"
+      render={[Function]}
+    />
+    <Route
+      exact={true}
+      path="/compareSenate"
+      render={[Function]}
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="*"
+    />
+  </Switch>
 </div>
 `;

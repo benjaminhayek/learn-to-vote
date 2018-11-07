@@ -5,12 +5,8 @@ import { shallow } from 'enzyme';
 
 describe('APP', () => {
   let wrapper;
-  let mockFetch;
-  let mockCongress;
 
   beforeEach(() => {
-    mockFetch = jest.fn();
-    mockCongress = [];
     wrapper = shallow(
       <App />
     )
@@ -107,13 +103,6 @@ describe('mapDispatchToProps', () => {
     const mockDispatch = jest.fn();
     const mappedProps = mapDispatchToProps(mockDispatch);
     mappedProps.contentStatus('loading');
-    expect(mockDispatch).toHaveBeenCalled();
-  });
-
-  it('should call dispatch when getBills is invoked', () => {
-    const mockDispatch = jest.fn();
-    const mappedProps = mapDispatchToProps(mockDispatch);
-    mappedProps.getBills({bill: 'i am a bill'});
     expect(mockDispatch).toHaveBeenCalled();
   });
 })
