@@ -6,7 +6,7 @@ import Header from '../../components/Header';
 import { contentStatus } from '../../actions';
 import { fetchCongress, fetchSenators } from '../../actions/Thunks';
 import ErrorPage from '../../components/ErrorPage';
-import MemberContainer from '../../components/MemberContainer';
+import MemberContainer from '../../containers/MemberContainer';
 import SenateContainer from '../../components/SenateContainer';
 import './App.css';
 

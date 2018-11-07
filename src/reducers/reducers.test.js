@@ -9,6 +9,13 @@ describe('congressmenReducer', () => {
         const result = congressmenReducer(undefined, {});
         expect(result).toEqual(expected);
       });
+
+      it('should set selected to false when clearSelected is dispatched', () => {
+        const initialState = [{name: 'Ted', id: 1, party: 'D', title: 'Representative', nextElection: '2018', selected: true}, {name: 'Jan', id: 2, party: 'R', title: 'Representative', nextElection: '2018', selected: true}];
+        const expected = [{name: 'Ted', id: 1, party: 'D', title: 'Representative', nextElection: '2018', selected: false}, {name: 'Jan', id: 2, party: 'R', title: 'Representative', nextElection: '2018', selected: false}];
+        const result = congressmenReducer(initialState, actions.clearSelected());
+        expect(result).toEqual(expected);
+      })
     
       it('should update state with bills when addCongressmen is dispatched', () => {
         const initialState = [];

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Card from '../../containers/MemberCard';
-import MemberBillsCard from '../MemberBillsCard';
+import MemberBillsCard from '../../components/MemberBillsCard';
 import './MemberContainer.css';
 import { Link } from 'react-router-dom';
 import { educationBills } from '../../utils/dataCleaners';

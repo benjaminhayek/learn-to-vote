@@ -1,5 +1,5 @@
 import { enzyme } from 'enzyme';
-import { addCongressmen, contentStatus, addSenators, getEducation, toggleSelected } from './index'
+import { addCongressmen, contentStatus, addSenators, clearSelected, toggleSelected } from './index'
 
 describe('actions', () => {
     it('should have a type of ADD_CONGRESSMEN', () => {
@@ -39,6 +39,14 @@ describe('actions', () => {
           id
         }
         const result = toggleSelected(id);
+        expect(result).toEqual(expected);
+      });
+
+      it('should have a type of CLEAR_SELECTED', () => {
+        const expected = {
+          type: 'CLEAR_SELECTED'
+        }
+        const result = clearSelected();
         expect(result).toEqual(expected);
       });
 })

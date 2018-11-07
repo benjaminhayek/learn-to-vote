@@ -1,13 +1,15 @@
 import React from 'react';
 import { MemberContainer } from './index';
-import { shallow } from 'enzyme';
-import { educationBills } from '../../utils/dataCleaners';
+import { mapStateToProps, mapDispatchToProps } from './index.js';
+import { shallow, mount } from 'enzyme';
 
 describe('MemberContainer', () => {
   let wrapper;
   let congressmen;
+  let clearSelected;
   
   beforeEach(() => {
+    clearSelected = jest.fn();
     congressmen = [{name: 'Ted', id: 1, party: 'D', title: 'Representative', nextElection: '2018', selected: false}, {name: 'Jan', id: 2, party: 'R', title: 'Representative', nextElection: '2018', selected: false}];    
     wrapper = shallow(<MemberContainer congressmen={congressmen} />);
   })
@@ -26,9 +28,31 @@ describe('MemberContainer', () => {
     expect(wrapper.state().bills).toEqual(expected);
   });
 
-  it('should reset the state on click', () => {
-    const expected = []
-    wrapper.instance().resetState()
-    expect(wrapper.state().bills).toEqual(expected)
+  it.skip('should call clearSelected on click', () => {
+    wrapper = mount(<MemberContainer congressmen={congressmen} clearSelected={clearSelected}/>)
+    const spy = jest.spyOn(wrapper.instance(), 'clearSelected');
+    wrapper.instance().forceUpdate();
+    wrapper.find('.card-container').simulate('click')
+    expect(spy).toHaveBeenCalled()
   })
+})
+
+describe('mapStateToProps', () => {
+  it('should have access to senators, congressmen and loading', () => {
+    const mockStore = {
+      selected: 'undefined',
+    }
+    const expected = {...mockStore};
+    const result = mapStateToProps(mockStore);
+    expect(result).toEqual(expected);
+  });
+})
+
+describe('mapDispatchToProps', () => {
+  it('should call dispatch when clearSelected is invoked', () => {
+    const mockDispatch = jest.fn();
+    const mappedProps = mapDispatchToProps(mockDispatch);
+    mappedProps.clearSelected();
+    expect(mockDispatch).toHaveBeenCalled();
+  });
 })
