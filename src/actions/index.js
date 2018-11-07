@@ -6,7 +6,7 @@
   export const contentStatus = (loading) => ({
     type: 'CONTENT_STATUS',
     status: loading
-  })
+  });
 
   export const addSenators = (senator) => ({
     type: "ADD_SENATORS",
@@ -16,4 +16,8 @@
   export const toggleSelected = (id) => ({
     type: 'TOGGLE_SELECTED',
     id
+  });
+
+  export const clearSelected = () => ({
+    type: 'CLEAR_SELECTED',
   })

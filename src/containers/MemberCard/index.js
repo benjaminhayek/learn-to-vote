@@ -13,7 +13,7 @@ export class MemberCard extends Component {
     }
 
     render() {
-        const { congressmen } = this.props
+        const { congressmen } = this.props;
         return(
             <div onClick={this.toggleSelect} className={congressmen.party === 'D' ? 'dem' : 'rep'}>
                 <img alt='apple' src={congressmen.selected ? Apple2 : Apple} className='apple' />

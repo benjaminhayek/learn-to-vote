@@ -7,6 +7,8 @@ import { educationBills } from '../../utils/dataCleaners';
 import PropTypes from 'prop-types';
 import loadingGif from '../../utils/assets/loading-gif.gif';
 import comparePic from '../../utils/assets/debate.svg';
+import { connect } from 'react-redux';
+import { clearSelected } from '../../actions';
 
 export class MemberContainer extends Component {
     constructor() {
@@ -16,9 +18,12 @@ export class MemberContainer extends Component {
         loading: false
       }
     }
+
     resetState = () => {
+      this.props.clearSelected()
       this.setState({bills: []})
     }
+
     handleSubmit = async () => {
     this.setState({loading: true})
     const { congressmen } = this.props
@@ -32,9 +37,10 @@ export class MemberContainer extends Component {
       position2: bills.position2[0].position,
     }))
     if(displayMembersBill.length) {
-      this.setState({bills: displayMembersBill, loading: false})
-    } else {alert('there are no bills to compare')}
-  }
+        this.setState({bills: displayMembersBill, loading: false})
+      } else {alert('there are no bills to compare')}
+    }
+
     render() {
     const { congressmen } = this.props;
     const { loading } = this.state;
@@ -85,7 +91,7 @@ export class MemberContainer extends Component {
           <div>
             <Link to='/' style={{ textDecoration: 'none' }}>
               <h1 className='container-title'>Your Congressmen</h1>
-              <h1 className='card-container' onClick={this.resetState}>{displayMembers}</h1>
+              <h1 className='card-container' onClick={selectedCount.length > 1 ? this.resetState : null}>{displayMembers}</h1>
             </Link>
           </div>
       </div>
@@ -94,10 +100,18 @@ export class MemberContainer extends Component {
   }
 }
 
+export const mapStateToProps = (state) => ({
+  selected: state.selected,
+})
+
+export const mapDispatchToProps = (dispatch) => ({
+  clearSelected: () => dispatch(clearSelected())
+})
+
 MemberContainer.propTypes = {
   congressmen: PropTypes.array,
   bills: PropTypes.array
 }
 
 
-export default MemberContainer;
+export default connect(mapStateToProps, mapDispatchToProps)(MemberContainer)
