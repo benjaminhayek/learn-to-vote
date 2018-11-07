@@ -35,6 +35,7 @@ export class SenateContainer extends Component {
     const { senators } = this.props;
     let uuidv4 = require("uuid/v4");
     const selectedCount = senators.filter(senator => senator.selected)
+    const isEnabled = selectedCount.length === 2;
     const displaySelected = selectedCount.map(senator => (
       <Card 
         senator={senator}
@@ -73,7 +74,7 @@ export class SenateContainer extends Component {
               <h1 className='container-title'>{selectedCount ? 'You have Selected' : ''}</h1>
               <h1 className='card-container'>{displaySelected}</h1>
               <h1 className='bill-container'>{displayBills}</h1>
-              <button className='compare-btn' onClick={this.handleSubmit}><img alt='compare-pic' className='compare-pic' src={comparePic}/>Compare Senators</button>
+              <button className='compare-btn' onClick={this.handleSubmit} disabled={!isEnabled}><img alt='compare-pic' className='compare-pic' src={comparePic}/>Compare Senators</button>
             </Link>
           </div>
         }
