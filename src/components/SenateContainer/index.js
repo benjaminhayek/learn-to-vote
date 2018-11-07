@@ -79,10 +79,8 @@ export class SenateContainer extends Component {
           </div>
         }
         <div>
-          <Link to='/senators' style={{ textDecoration: 'none' }}>
             <h1 className='container-title'>Your Senators</h1>
             <h1 className='card-container'>{displaySenators}</h1>
-          </Link>
         </div>
       </div>
     )
