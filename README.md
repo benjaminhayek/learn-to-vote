@@ -18,14 +18,14 @@ Run tests with `npm test`.
 
 ## Final Result
 
-![alt tag](https://github.com/benjaminhayek/learn-to-vote/tree/master/public/images/home.png "Wire-Frame")
+![alt tag](https://github.com/benjaminhayek/learn-to-vote/blob/master/public/images/home.png "Wire-Frame")
 
-![alt tag](https://github.com/benjaminhayek/learn-to-vote/tree/master/public/images/senator-page.png "Wire-Frame")
+![alt tag](https://github.com/benjaminhayek/learn-to-vote/blob/master/public/images/senator-page.png "Wire-Frame")
 
-![alt tag](https://github.com/benjaminhayek/learn-to-vote/tree/master/public/images/vote.png "Wire-Frame")
+![alt tag](https://github.com/benjaminhayek/learn-to-vote/blob/master/public/images/vote.png "Wire-Frame")
 
-![alt tag](https://github.com/benjaminhayek/learn-to-vote/tree/master/public/images/homePage.png "Screen-shot of App")
+![alt tag](https://github.com/benjaminhayek/learn-to-vote/blob/master/public/images/homePage.png "Screen-shot of App")
 
-![alt tag](https://github.com/benjaminhayek/learn-to-vote/tree/master/public/images/selected.png "Screen-shot of App")
+![alt tag](https://github.com/benjaminhayek/learn-to-vote/blob/master/public/images/selected.png "Screen-shot of App")
 
-![alt tag](https://github.com/benjaminhayek/learn-to-vote/tree/master/public/images/compared.png "Screen-shot of App")
+![alt tag](https://github.com/benjaminhayek/learn-to-vote/blob/master/public/images/compared.png "Screen-shot of App")
