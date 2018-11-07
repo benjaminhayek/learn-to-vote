@@ -70,10 +70,10 @@ export class SenateContainer extends Component {
         {
           showButton &&
           <div>
-            <Link to='/compareSenate' style={{ textDecoration: 'none' }}>
               <h1 className='container-title'>{selectedCount ? 'You have Selected' : ''}</h1>
               <h1 className='card-container'>{displaySelected}</h1>
               <h1 className='bill-container'>{displayBills}</h1>
+            <Link to='/compareSenate' style={{ textDecoration: 'none' }}>            
               <button className='compare-btn' onClick={this.handleSubmit} disabled={!isEnabled}><img alt='compare-pic' className='compare-pic' src={comparePic}/>Compare Senators</button>
             </Link>
           </div>

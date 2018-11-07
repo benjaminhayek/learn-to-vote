@@ -80,10 +80,10 @@ export class MemberContainer extends Component {
         {
           showButton &&
           <div>
-            <Link to='/compareCongress' style={{ textDecoration: 'none' }}>
               <h1 className='container-title'>{selectedCount ? 'You have Selected' : ''}</h1>
               <h1 className='card-container'>{displaySelected}</h1>
               <h1 className='bill-container'>{displayBills}</h1>
+            <Link to='/compareCongress' style={{ textDecoration: 'none' }}>
               <button onClick={this.handleSubmit} className='compare-btn' disabled={!isEnabled}><img alt='compare-pic' className='compare-pic' src={comparePic}/>Compare Congressmen</button>
             </Link>
           </div>
