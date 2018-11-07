@@ -26,7 +26,8 @@ export class MemberContainer extends Component {
 
     handleSubmit = async () => {
     this.setState({loading: true})
-    const { congressmen } = this.props
+    const { congressmen } = this.props;
+    const error = 'Sorry, these congressmen have no education bills in common'
     const selectedCount = congressmen.filter(member => member.selected)
     const memberBills = await educationBills(selectedCount[0].id, selectedCount[1].id, 'house')
     const displayMembersBill = memberBills.map(bills => ({
@@ -38,7 +39,9 @@ export class MemberContainer extends Component {
     }))
     if(displayMembersBill.length) {
         this.setState({bills: displayMembersBill, loading: false})
-      } else {alert('there are no bills to compare')}
+      } else {
+        this.setState({bills: [{title: error}], loading: false})
+      }
     }
 
     render() {
@@ -80,10 +83,10 @@ export class MemberContainer extends Component {
         {
           showButton &&
           <div>
-            <Link to='/compareCongress' style={{ textDecoration: 'none' }}>
               <h1 className='container-title'>{selectedCount ? 'You have Selected' : ''}</h1>
               <h1 className='card-container'>{displaySelected}</h1>
               <h1 className='bill-container'>{displayBills}</h1>
+            <Link to='/compareCongress' style={{ textDecoration: 'none' }}>
               <button onClick={this.handleSubmit} className='compare-btn' disabled={!isEnabled}><img alt='compare-pic' className='compare-pic' src={comparePic}/>Compare Congressmen</button>
             </Link>
           </div>

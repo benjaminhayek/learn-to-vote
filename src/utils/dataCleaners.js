@@ -1,4 +1,4 @@
-import { getMembers, getPosition, comparePositions, getSponsors, compareSenators } from './ApiCals';
+import { getMembers, getPosition, comparePositions, getSponsors } from './ApiCals';
 
 export const memberData = async (chamber) => {
     const members = await getMembers(chamber)

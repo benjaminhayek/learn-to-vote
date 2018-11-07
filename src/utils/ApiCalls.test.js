@@ -18,6 +18,15 @@ describe('API', () => {
         expect(window.fetch).toHaveBeenCalledWith(expected);
       });
 
+      it('throw an error if status is not ok', async () => {
+        const expected = Error('')
+          window.fetch = jest.fn().mockImplementation(() => ({
+          status: 500,
+            json: () => Promise.reject({congressmen: []})
+          }))
+        await expect(getMembers()).rejects.toEqual(expected)
+        })
+
       it('calls fetch with the correct params', () => {
         const url = 'http://gd.geobytes.com/GetCityDetails?callback='
         window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
@@ -32,6 +41,15 @@ describe('API', () => {
         getState();
         expect(window.fetch).toHaveBeenCalledWith(expected);
       });
+
+      it('throw an error if status is not ok', async () => {
+        const expected = Error('')
+          window.fetch = jest.fn().mockImplementation(() => ({
+          status: 500,
+            json: () => Promise.reject({state: ''})
+          }))
+        await expect(getState()).rejects.toEqual(expected)
+        })
 
       it('calls fetch with the correct params', () => {
         const url = "https://api.propublica.org/congress/v1/members/undefined/bills/undefined/115/undefined.json"
@@ -53,6 +71,15 @@ describe('API', () => {
         comparePositions();
         expect(window.fetch).toHaveBeenCalledWith(...expected);
       });
+
+      it('throw an error if status is not ok', async () => {
+        const expected = Error('')
+          window.fetch = jest.fn().mockImplementation(() => ({
+          status: 500,
+            json: () => Promise.reject({bills: []})
+          }))
+        await expect(comparePositions()).rejects.toEqual(expected)
+        })
 
       it('calls fetch with the correct params', async () => {
         const parameter = [{congressdotgov_url: "https://www.congress.gov/bill/115th-congress/house-bill/1847"}]
@@ -76,6 +103,15 @@ describe('API', () => {
         expect(window.fetch).toHaveBeenCalledWith(...expected);
       });
 
+      it('throw an error if status is not ok', async () => {
+        const expected = Error('')
+          window.fetch = jest.fn().mockImplementation(() => ({
+          status: 500,
+            json: () => Promise.reject({results: []})
+          }))
+        await expect(getSponsors()).rejects.toEqual(expected)
+        })
+
       it('calls fetch with the correct params', () => {
         const url = "https://api.propublica.org/congress/v1/members/undefined/votes.json"
         window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
@@ -96,4 +132,13 @@ describe('API', () => {
         getPosition();
         expect(window.fetch).toHaveBeenCalledWith(...expected);
       });
+
+      it('throw an error if status is not ok', async () => {
+        const expected = Error('')
+          window.fetch = jest.fn().mockImplementation(() => ({
+          status: 500,
+            json: () => Promise.reject({bills: []})
+          }))
+        await expect(getPosition()).rejects.toEqual(expected)
+        })
 })

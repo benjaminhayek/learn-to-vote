@@ -32,7 +32,7 @@ exports[`MemberContainer should match the snapshot 1`] = `
               "title": "Representative",
             }
           }
-          key="35541a6d-8125-4871-a6ff-af7a04fc615c"
+          key="3594533b-2168-4efb-8451-f83b08dae087"
         />
         <Connect(MemberCard)
           congressmen={
@@ -45,7 +45,7 @@ exports[`MemberContainer should match the snapshot 1`] = `
               "title": "Representative",
             }
           }
-          key="cb7687bd-fdc2-422c-bc86-fbf99b7585b8"
+          key="8258c9a0-4169-4309-aedf-a8715c871427"
         />
       </h1>
     </Link>

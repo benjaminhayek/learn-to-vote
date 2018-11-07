@@ -2,8 +2,10 @@
 
 exports[`ERROR PAGE should match the snapshot 1`] = `
 <div>
-  <h1>
-    That is not a valid address
+  <h1
+    className="error-title"
+  >
+    Sorry that is not a valid address :(
   </h1>
 </div>
 `;

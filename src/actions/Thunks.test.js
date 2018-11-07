@@ -23,8 +23,8 @@ describe('Thunks', () => {
         })
 
         it.skip('should dispatch contentStatus error if the response is not ok', async () => {
-          window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-            ok: false
+          window.fetch = jest.fn().mockImplementation(() => Promise.reject({
+            status: 500
           }))
           
           const thunk = fetchCongress(mockUrl)

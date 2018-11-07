@@ -7,7 +7,7 @@ exports[`HEADER should match the snapshot 1`] = `
   <h1
     className="header-title"
   >
-    Educate Yourself on Education!
+    Get Educated on Education!
   </h1>
   <Link
     replace={false}
