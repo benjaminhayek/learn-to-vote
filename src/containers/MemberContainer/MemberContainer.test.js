@@ -27,14 +27,6 @@ describe('MemberContainer', () => {
     wrapper.instance().handleSubmit();
     expect(wrapper.state().bills).toEqual(expected);
   });
-
-  it.skip('should call clearSelected on click', () => {
-    wrapper = mount(<MemberContainer congressmen={congressmen} clearSelected={clearSelected}/>)
-    const spy = jest.spyOn(wrapper.instance(), 'clearSelected');
-    wrapper.instance().forceUpdate();
-    wrapper.find('.card-container').simulate('click')
-    expect(spy).toHaveBeenCalled()
-  })
 })
 
 describe('mapStateToProps', () => {
