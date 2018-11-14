@@ -5,9 +5,9 @@
     width: 300px;
     text-align: center;
     background-image: url('../../utils/assets/chalkboard.jpg');
-    background-size: 310px 255px;
-    font-family: 'Homemade Apple', cursive;
-    font-size: .75em;
+    background-size: 309px 242px;
+    font-family: 'Marck Script', cursive;
+    font-size: 1em;
 }
 
 .dem:hover {
