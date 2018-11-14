@@ -10,6 +10,10 @@
     font-family: 'Fredericka the Great', cursive;
   }
 
+  .comparing-container {
+    text-align: center;
+  }
+
   .compare-pic {
     background-color: transparent;
     border: none;

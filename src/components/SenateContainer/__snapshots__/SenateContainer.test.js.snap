@@ -3,51 +3,41 @@
 exports[`SenateContainer should match the snapshot 1`] = `
 <div>
   <div>
-    <Link
-      replace={false}
-      style={
-        Object {
-          "textDecoration": "none",
-        }
-      }
-      to="/senators"
+    <h1
+      className="container-title"
     >
-      <h1
-        className="container-title"
-      >
-        Your Senators
-      </h1>
-      <h1
-        className="card-container"
-      >
-        <Connect(SenateCard)
-          key="7eeea9a3-18d9-4962-b729-98047276b2e8"
-          senator={
-            Object {
-              "id": 2,
-              "name": "Bob",
-              "nextElection": "2020",
-              "party": "R",
-              "selected": false,
-              "title": "Senator",
-            }
+      Your Senators
+    </h1>
+    <h1
+      className="card-container"
+    >
+      <Connect(SenateCard)
+        key="b1d0c4b4-744f-414b-b266-f61bbaec1a2b"
+        senator={
+          Object {
+            "id": 2,
+            "name": "Bob",
+            "nextElection": "2020",
+            "party": "R",
+            "selected": false,
+            "title": "Senator",
           }
-        />
-        <Connect(SenateCard)
-          key="4212dda0-73d1-456e-8c03-1e10f5f815ee"
-          senator={
-            Object {
-              "id": 2,
-              "name": "Jan",
-              "nextElection": "2018",
-              "party": "R",
-              "selected": false,
-              "title": "Senator",
-            }
+        }
+      />
+      <Connect(SenateCard)
+        key="d0e22592-6c09-4849-9723-70e8fd4f76e6"
+        senator={
+          Object {
+            "id": 2,
+            "name": "Jan",
+            "nextElection": "2018",
+            "party": "R",
+            "selected": false,
+            "title": "Senator",
           }
-        />
-      </h1>
-    </Link>
+        }
+      />
+    </h1>
   </div>
 </div>
 `;

@@ -52,7 +52,7 @@ describe('APP', () => {
     expect(mockFn).toHaveBeenCalled();
   });
 
-  it('should call getBills on componentDidMount', async () =>{
+  it.only('should call getBills on componentDidMount', async () =>{
     let mockBills= {bills:[]};
     let mockFn = jest.fn().mockImplementation(() => (mockBills));
     window.fetch = jest.fn().mockImplementation(() => {
@@ -66,7 +66,7 @@ describe('APP', () => {
         fetchSenators={mockFn}
         getBills={mockFn}
       />);
-    await wrapper.instance().componentDidMount();
+    // await wrapper.instance().componentDidMount();
     expect(mockFn).toHaveBeenCalled();
   });
 })
