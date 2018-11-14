@@ -69,7 +69,7 @@ export class SenateContainer extends Component {
       <div>
         {
           showButton &&
-          <div>
+          <div className='comparing-container'>
               <h1 className='container-title'>{selectedCount ? 'You have Selected' : ''}</h1>
               <h1 className='card-container'>{displaySelected}</h1>
               <h1 className='bill-container'>{displayBills}</h1>
