@@ -11,11 +11,11 @@
 }
 
 .dem:hover {
-    border: 1px solid blue;
+    border: 2px solid blue;
 }
 
 .rep:hover {
-    border: 1px solid red;
+    border: 2px solid red;
 }
 
 .apple {
