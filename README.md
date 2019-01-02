@@ -22,7 +22,6 @@ Run tests with `npm test`.
 
 ![alt tag](https://github.com/benjaminhayek/learn-to-vote/blob/master/public/images/senator-page.png "Wire-Frame")
 
-![alt tag](https://github.com/benjaminhayek/learn-to-vote/blob/master/public/images/vote.png "Wire-Frame")
 
 ## Final Result
 
