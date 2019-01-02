@@ -16,13 +16,15 @@ Run `npm start` and visit localhost:3000 in your browser.
 
 Run tests with `npm test`.
 
-## Final Result
+## Wireframes
 
 ![alt tag](https://github.com/benjaminhayek/learn-to-vote/blob/master/public/images/home.png "Wire-Frame")
 
 ![alt tag](https://github.com/benjaminhayek/learn-to-vote/blob/master/public/images/senator-page.png "Wire-Frame")
 
 ![alt tag](https://github.com/benjaminhayek/learn-to-vote/blob/master/public/images/vote.png "Wire-Frame")
+
+## Final Result
 
 ![alt tag](https://github.com/benjaminhayek/learn-to-vote/blob/master/public/images/homePage.png "Screen-shot of App")
 
