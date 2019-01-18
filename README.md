@@ -1,5 +1,5 @@
 # Get Educated on Education
-This project allows users to compare their congressmen and senators based on education bills. It was made using The ProPublica API and Create-React-App.
+This project allows users to compare their congressmen and senators based on education bills. It was made using The ProPublica API and Create-React-App. For this project I was asigned the ProPublica API and early education teachers as a target audience.
 
 ## Project Goals
 * Find senators and congressmen based on geo location and display to the page.
